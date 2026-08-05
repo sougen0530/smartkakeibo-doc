@@ -392,6 +392,7 @@ ul {
 .link-card.accent-efficiency { border-top: 4px solid #10b981; }
 .link-card.accent-goods { border-top: 4px solid #8b5cf6; }
 .link-card.accent-faq { border-top: 4px solid #06b6d4; }
+.link-card.accent-manual { border-top: 4px solid #4f46e5; }
 
 /* --- お知らせ / 新着リスト --- */
 .section-block {
@@ -655,6 +656,242 @@ ul {
   padding: 0 18px 18px;
   color: var(--color-text-muted);
   font-size: 0.92rem;
+}
+
+/* ------------------------------------------------------------
+   マニュアル
+   ------------------------------------------------------------ */
+
+/* --- ページ内目次 --- */
+.manual-toc {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+
+.manual-toc-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  margin-bottom: 10px;
+}
+
+.manual-toc ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 4px 20px;
+}
+
+.manual-toc li a {
+  display: block;
+  padding: 5px 0;
+  font-size: 0.92rem;
+  color: var(--color-primary);
+  border-bottom: 1px dashed transparent;
+}
+
+.manual-toc li a:hover {
+  border-bottom-color: var(--color-primary);
+}
+
+/* --- 本文セクション --- */
+.manual-section {
+  margin-bottom: 44px;
+  scroll-margin-top: 80px;
+}
+
+.manual-section h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1f2937;
+  border-left: 4px solid var(--color-primary);
+  padding-left: 12px;
+  margin: 0 0 16px;
+}
+
+.manual-section h3 {
+  font-size: 1.03rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 26px 0 10px;
+}
+
+.manual-section p {
+  margin: 0 0 14px;
+}
+
+.manual-section a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.manual-section a:hover {
+  text-decoration: underline;
+}
+
+/* --- 手順リスト --- */
+ol.steps {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 18px 20px 18px 44px;
+  margin: 0 0 16px;
+  list-style: decimal;
+}
+
+ol.steps li {
+  padding: 6px 0;
+  font-size: 0.95rem;
+}
+
+ol.steps li::marker {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* --- 注釈ボックス --- */
+.callout {
+  border-left: 4px solid var(--color-border);
+  border-radius: 0 10px 10px 0;
+  padding: 14px 18px;
+  margin: 0 0 16px;
+  font-size: 0.92rem;
+  line-height: 1.75;
+}
+
+.callout.note {
+  background: #fffbeb;
+  border-left-color: #f59e0b;
+}
+
+.callout.tip {
+  background: #ecfdf5;
+  border-left-color: #10b981;
+}
+
+.callout.warn {
+  background: #fef2f2;
+  border-left-color: #ef4444;
+}
+
+/* --- 表 --- */
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 0 16px;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+}
+
+.table-wrap table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 440px;
+  background: var(--color-surface);
+  font-size: 0.9rem;
+}
+
+.table-wrap th {
+  background: var(--color-bg-alt);
+  color: #1f2937;
+  text-align: left;
+  font-weight: 700;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--color-border);
+  white-space: nowrap;
+}
+
+.table-wrap td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top;
+  word-break: break-word;
+}
+
+.table-wrap tr:last-child td {
+  border-bottom: none;
+}
+
+.table-wrap td + td {
+  border-left: 1px solid var(--color-border);
+}
+
+.table-wrap th + th {
+  border-left: 1px solid var(--color-border);
+}
+
+/* --- キー表記 --- */
+kbd {
+  display: inline-block;
+  background: #eef2ff;
+  color: #4338ca;
+  border-radius: 6px;
+  padding: 1px 8px;
+  font-size: 0.85em;
+  font-weight: 600;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+code {
+  background: var(--color-bg-alt);
+  border-radius: 5px;
+  padding: 1px 6px;
+  font-size: 0.88em;
+}
+
+/* --- 前後ページのナビ --- */
+.page-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 36px 0 32px;
+}
+
+.page-nav-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.page-nav-item:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.page-nav-item span {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
+
+.page-nav-item strong {
+  font-size: 0.94rem;
+  color: var(--color-primary);
+}
+
+.page-nav-item.next {
+  text-align: right;
+  align-items: flex-end;
+}
+
+@media (max-width: 560px) {
+  .page-nav {
+    grid-template-columns: 1fr;
+  }
+
+  .page-nav-item.next {
+    text-align: left;
+    align-items: flex-start;
+  }
 }
 
 /* --- プライバシーポリシー内 導線 --- */

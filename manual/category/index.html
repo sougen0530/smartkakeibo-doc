@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>カテゴリと自動分類｜スマート家計簿 使い方マニュアル</title>
+  <meta name="description" content="カテゴリの階層管理、テンプレート、支払名からの自動分類ルール、位置情報判定。" />
+  <link rel="stylesheet" href="../../style.css" />
+</head>
+<body>
+  <div class="app-shell">
+
+    <div class="mobile-topbar">
+      <div class="brand"><span class="logo-icon">💰</span>スマート家計簿</div>
+      <button class="hamburger-btn" data-sidebar-toggle aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="sidebar-overlay" data-sidebar-overlay></div>
+
+    <aside class="sidebar" data-sidebar>
+      <div class="sidebar-brand"><span class="logo-icon">💰</span>スマート家計簿</div>
+      <ul class="nav-list">
+        <li><a class="nav-link" href="../../index.html"><span class="nav-icon">🏠</span>ホーム</a></li>
+        <li>
+          <a class="nav-link" href="../../manual/index.html"><span class="nav-icon">📖</span>使い方マニュアル</a>
+          <ul class="nav-sub-list">
+            <li><a class="nav-link" href="../../manual/getting-started/index.html"><span class="nav-icon">🚀</span>はじめに・初期設定</a></li>
+            <li><a class="nav-link" href="../../manual/transactions/index.html"><span class="nav-icon">✏️</span>支出を記録する</a></li>
+            <li><a class="nav-link" href="../../manual/receipt/index.html"><span class="nav-icon">🧾</span>レシート・写真から取り込む</a></li>
+            <li><a class="nav-link" href="../../manual/partner/index.html"><span class="nav-icon">👫</span>パートナーと共有する</a></li>
+            <li><a class="nav-link" href="../../manual/settlement/index.html"><span class="nav-icon">✅</span>月の締め作業と精算</a></li>
+            <li><a class="nav-link" href="../../manual/csv/index.html"><span class="nav-icon">📄</span>CSVインポート</a></li>
+            <li><a class="nav-link" href="../../manual/fixed-cost/index.html"><span class="nav-icon">🔁</span>固定費と登録提案</a></li>
+            <li><a class="nav-link" href="../../manual/budget/index.html"><span class="nav-icon">🎯</span>予算管理</a></li>
+            <li><a class="nav-link is-active" href="../../manual/category/index.html"><span class="nav-icon">🗂️</span>カテゴリと自動分類</a></li>
+            <li><a class="nav-link" href="../../manual/report/index.html"><span class="nav-icon">📊</span>レポートを見る</a></li>
+            <li><a class="nav-link" href="../../manual/ai/index.html"><span class="nav-icon">✨</span>AIチャット</a></li>
+            <li><a class="nav-link" href="../../manual/notification/index.html"><span class="nav-icon">🔔</span>通知・お問い合わせ</a></li>
+            <li><a class="nav-link" href="../../manual/premium/index.html"><span class="nav-icon">👑</span>プレミアム</a></li>
+          </ul>
+        </li>
+        <li><a class="nav-link" href="../../faq/index.html"><span class="nav-icon">💡</span>よくある質問（FAQ）</a></li>
+        <li>
+          <a class="nav-link" href="../../articles/index.html"><span class="nav-icon">💰</span>お役立ちマネー情報</a>
+          <ul class="nav-sub-list">
+            <li><a class="nav-link" href="../../articles/savings/index.html"><span class="nav-icon">⚡</span>節約術</a></li>
+            <li><a class="nav-link" href="../../articles/investment/index.html"><span class="nav-icon">📈</span>資産形成</a></li>
+            <li><a class="nav-link" href="../../articles/poikatsu/index.html"><span class="nav-icon">🪙</span>ポイ活</a></li>
+            <li><a class="nav-link" href="../../articles/efficiency/index.html"><span class="nav-icon">🚀</span>効率化</a></li>
+            <li><a class="nav-link" href="../../articles/goods/index.html"><span class="nav-icon">🛍️</span>グッズ</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="nav-divider"></div>
+      <ul class="nav-list">
+        <li><a class="nav-link" href="../../privacy-policy.html"><span class="nav-icon">📜</span>プライバシーポリシー</a></li>
+      </ul>
+    </aside>
+
+    <div class="main-content">
+      <div class="content-inner">
+
+        <div class="breadcrumb"><a href="../../index.html">ホーム</a> / <a href="../index.html">使い方マニュアル</a> / カテゴリと自動分類</div>
+
+        <header class="page-header">
+          <span class="eyebrow">MANUAL / CATEGORY</span>
+          <h1>🗂️ カテゴリと自動分類</h1>
+          <p>自分の家計に合ったカテゴリを整えると、レポートも予算もぐっと使いやすくなります。支払名からカテゴリを自動で付けるルールも設定できます。</p>
+        </header>
+
+        <nav class="manual-toc">
+          <div class="manual-toc-title">このページの内容</div>
+          <ul>
+            <li><a href="#manage">カテゴリを整える</a></li>
+            <li><a href="#auto">支払名から自動でカテゴリを付ける</a></li>
+            <li><a href="#scoring">スコアリング自動分類（プレミアム）</a></li>
+            <li><a href="#location">位置情報を使ったカテゴリ判定（プレミアム）</a></li>
+            <li><a href="#share">カテゴリをパートナーと共有する</a></li>
+          </ul>
+        </nav>
+
+        <section class="manual-section" id="manage">
+          <h2>カテゴリを整える</h2>
+
+<ol class="steps">
+  <li><kbd>⚙️ 設定</kbd> →「カテゴリ設定」を開き、<strong>「カテゴリ管理を有効にする」</strong>をONにします。</li>
+  <li>はじめてのときは3種類のテンプレート（フラット／固定費・変動費／必須生活費・ゆとり費）から一括生成できます。</li>
+  <li><kbd>＋</kbd> で追加、行をタップで名前・アイコン・親カテゴリを編集できます。</li>
+  <li>「編集」ボタンで並べ替えや削除ができます。</li>
+</ol>
+<div class="callout note">「未分類」という名前のカテゴリはシステムで使うため作成できません。
+また、過去の支出に使われたカテゴリは削除できず<strong>「使用不可（アーカイブ）」</strong>になります。
+アーカイブされたカテゴリは、新規入力の選択肢からは除外されます。</div>
+<div class="callout note">新しく作ったカテゴリが入力時に出てこないときは、
+「カテゴリ管理を有効にする」がONか、そのカテゴリがアーカイブされていないかを確認してください。</div>
+        </section>
+        <section class="manual-section" id="auto">
+          <h2>支払名から自動でカテゴリを付ける</h2>
+
+<ol class="steps">
+  <li><kbd>⚙️ 設定</kbd> →「カテゴリ自動分類」を開き、<kbd>＋</kbd> をタップします。</li>
+  <li>抽出方法（部分一致など）・キーワード（例: スーパー）・分類先カテゴリを設定して保存します。</li>
+  <li>ルールは一覧の上にあるものほど優先されます。並べ替えで優先順位を変更できます。</li>
+</ol>
+<div class="callout note"><strong>無料プランでは、上位2つのルールだけが照合・適用されます</strong>
+（3位以降は対象外）。ルールの作成・並べ替え自体は無料でも制限なく行えます。
+プレミアムに登録すると、すべてのルールが適用されるようになります。</div>
+        </section>
+        <section class="manual-section" id="scoring">
+          <h2>スコアリング自動分類（プレミアム）</h2>
+
+<p>プレミアムでは、キーワードの一致だけでなく<strong>過去の記録から学習したスコアリング</strong>で
+カテゴリを提案する自動分類も利用できます。自動分類ルール一覧の画面から設定できます。</p>
+        </section>
+        <section class="manual-section" id="location">
+          <h2>位置情報を使ったカテゴリ判定（プレミアム）</h2>
+
+<p>自動分類ルール一覧から「位置情報の利用」に進むと、
+<strong>生活圏（自宅・職場など）の判定を使ったカテゴリの自動判定</strong>を設定できます。</p>
+<div class="callout note">この機能は<strong>プレミアム限定</strong>です。未加入の場合はプレミアムのご案内が表示され、
+現在地の取得・生活圏判定は行いません。設定値・自宅/職場の座標・過去の位置データは削除されず保持されます。</div>
+        </section>
+        <section class="manual-section" id="share">
+          <h2>カテゴリをパートナーと共有する</h2>
+
+<p>カテゴリと自動分類ルールは、1件ずつ「個人」か「パートナーと共有」かを選べます。
+詳しくは<a href="../partner/index.html#shared-category">パートナーと共有する</a>をご覧ください。</p>
+<div class="callout note">パートナー設定を再同期した場合も、過去の明細は同じカテゴリへできるだけ引き継がれます。
+完全な設定データであることを確認してから、同じ名前・階層・用途のカテゴリへ引き継ぎ、
+その後に共有明細を再取得して未解決の参照も修復します。通信途中で一部しか取得できなかった場合は
+既存設定を変更せず、エラーを表示します。同名カテゴリが複数あるなど安全に特定できない場合も、
+誤ったカテゴリへ付けず元のカテゴリ名を残すので、必要に応じて明細編集画面からカテゴリを選び直してください。</div>
+        </section>
+
+        <!-- Google AdSense 自動広告表示エリア（余白確保用プレースホルダー） -->
+        <div class="ad-placeholder">
+          <span class="ad-label">AD</span>
+          <p>この付近に Google AdSense 自動広告が表示される予定です。</p>
+        </div>
+
+        <nav class="page-nav">
+          <a class="page-nav-item prev" href="../budget/index.html"><span>← 前のページ</span><strong>🎯 予算管理</strong></a>
+          <a class="page-nav-item next" href="../report/index.html"><span>次のページ →</span><strong>📊 レポートを見る</strong></a>
+        </nav>
+
+
+        <footer class="site-footer">© 2026 MyKakeibo 開発者</footer>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+</body>
+</html>

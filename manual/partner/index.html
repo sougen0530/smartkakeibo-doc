@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>パートナーと共有する｜スマート家計簿 使い方マニュアル</title>
+  <meta name="description" content="招待とペアリング、共有されるデータ、割り勘・立替の記録、共有の停止と解除。" />
+  <link rel="stylesheet" href="../../style.css" />
+</head>
+<body>
+  <div class="app-shell">
+
+    <div class="mobile-topbar">
+      <div class="brand"><span class="logo-icon">💰</span>スマート家計簿</div>
+      <button class="hamburger-btn" data-sidebar-toggle aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="sidebar-overlay" data-sidebar-overlay></div>
+
+    <aside class="sidebar" data-sidebar>
+      <div class="sidebar-brand"><span class="logo-icon">💰</span>スマート家計簿</div>
+      <ul class="nav-list">
+        <li><a class="nav-link" href="../../index.html"><span class="nav-icon">🏠</span>ホーム</a></li>
+        <li>
+          <a class="nav-link" href="../../manual/index.html"><span class="nav-icon">📖</span>使い方マニュアル</a>
+          <ul class="nav-sub-list">
+            <li><a class="nav-link" href="../../manual/getting-started/index.html"><span class="nav-icon">🚀</span>はじめに・初期設定</a></li>
+            <li><a class="nav-link" href="../../manual/transactions/index.html"><span class="nav-icon">✏️</span>支出を記録する</a></li>
+            <li><a class="nav-link" href="../../manual/receipt/index.html"><span class="nav-icon">🧾</span>レシート・写真から取り込む</a></li>
+            <li><a class="nav-link is-active" href="../../manual/partner/index.html"><span class="nav-icon">👫</span>パートナーと共有する</a></li>
+            <li><a class="nav-link" href="../../manual/settlement/index.html"><span class="nav-icon">✅</span>月の締め作業と精算</a></li>
+            <li><a class="nav-link" href="../../manual/csv/index.html"><span class="nav-icon">📄</span>CSVインポート</a></li>
+            <li><a class="nav-link" href="../../manual/fixed-cost/index.html"><span class="nav-icon">🔁</span>固定費と登録提案</a></li>
+            <li><a class="nav-link" href="../../manual/budget/index.html"><span class="nav-icon">🎯</span>予算管理</a></li>
+            <li><a class="nav-link" href="../../manual/category/index.html"><span class="nav-icon">🗂️</span>カテゴリと自動分類</a></li>
+            <li><a class="nav-link" href="../../manual/report/index.html"><span class="nav-icon">📊</span>レポートを見る</a></li>
+            <li><a class="nav-link" href="../../manual/ai/index.html"><span class="nav-icon">✨</span>AIチャット</a></li>
+            <li><a class="nav-link" href="../../manual/notification/index.html"><span class="nav-icon">🔔</span>通知・お問い合わせ</a></li>
+            <li><a class="nav-link" href="../../manual/premium/index.html"><span class="nav-icon">👑</span>プレミアム</a></li>
+          </ul>
+        </li>
+        <li><a class="nav-link" href="../../faq/index.html"><span class="nav-icon">💡</span>よくある質問（FAQ）</a></li>
+        <li>
+          <a class="nav-link" href="../../articles/index.html"><span class="nav-icon">💰</span>お役立ちマネー情報</a>
+          <ul class="nav-sub-list">
+            <li><a class="nav-link" href="../../articles/savings/index.html"><span class="nav-icon">⚡</span>節約術</a></li>
+            <li><a class="nav-link" href="../../articles/investment/index.html"><span class="nav-icon">📈</span>資産形成</a></li>
+            <li><a class="nav-link" href="../../articles/poikatsu/index.html"><span class="nav-icon">🪙</span>ポイ活</a></li>
+            <li><a class="nav-link" href="../../articles/efficiency/index.html"><span class="nav-icon">🚀</span>効率化</a></li>
+            <li><a class="nav-link" href="../../articles/goods/index.html"><span class="nav-icon">🛍️</span>グッズ</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="nav-divider"></div>
+      <ul class="nav-list">
+        <li><a class="nav-link" href="../../privacy-policy.html"><span class="nav-icon">📜</span>プライバシーポリシー</a></li>
+      </ul>
+    </aside>
+
+    <div class="main-content">
+      <div class="content-inner">
+
+        <div class="breadcrumb"><a href="../../index.html">ホーム</a> / <a href="../index.html">使い方マニュアル</a> / パートナーと共有する</div>
+
+        <header class="page-header">
+          <span class="eyebrow">MANUAL / PARTNER SHARING</span>
+          <h1>👫 パートナーと共有する</h1>
+          <p>パートナーと家計簿を共有して、割り勘・立替を記録するための設定です。招待する側と招待される側で手順が違うので、ご自身の側の手順をご覧ください。</p>
+        </header>
+
+        <nav class="manual-toc">
+          <div class="manual-toc-title">このページの内容</div>
+          <ul>
+            <li><a href="#overview">共有のしくみと前提</a></li>
+            <li><a href="#owner">招待する側（オーナー）の設定</a></li>
+            <li><a href="#guest">招待された側（参加者）の参加方法</a></li>
+            <li><a href="#sync">同期のタイミングと同期エラー</a></li>
+            <li><a href="#split">割り勘・立替を記録する</a></li>
+            <li><a href="#shared-category">カテゴリ・自動分類ルールを共有する</a></li>
+            <li><a href="#owner-priority">設定はオーナー側が優先されます</a></li>
+            <li><a href="#pause">共有を一時停止・再開する</a></li>
+            <li><a href="#unpair">ペアリングを解除する</a></li>
+          </ul>
+        </nav>
+
+        <section class="manual-section" id="overview">
+          <h2>共有のしくみと前提</h2>
+
+<p>パートナーと共有する場合、最初にどちらか一方が<strong>「招待する側（オーナー）」</strong>になり、
+もう一方が<strong>「招待される側（参加者）」</strong>として参加します。共有できるパートナーは<strong>1名まで</strong>です。</p>
+<ul class="checklist">
+  <li><span class="check-icon">✓</span><div>共有は iCloud を使うため、<strong>お互いの端末が iCloud にサインインしている必要があります</strong>
+      （iPhoneの「設定」→ご自身の名前で確認できます）。</div></li>
+  <li><span class="check-icon">✓</span><div>招待は<strong>パートナーの iCloud（Apple ID）のメールアドレス</strong>を指定して作成し、
+      そのアカウントだけが参加できます。リンクを知っているだけの第三者は参加できません。</div></li>
+  <li><span class="check-icon">✓</span><div>同期されるのは<strong>「共通支払」の支出記録</strong>と、共有に指定したカテゴリ・自動分類ルール・予算、精算に関する共有設定です。</div></li>
+  <li><span class="check-icon">✓</span><div><strong>「個人支払」の記録やレシート画像は同期されません。</strong>自分の端末の中だけに保存されます。</div></li>
+</ul>
+<div class="callout note">iCloud にサインインしていない場合、「パートナーと家計簿を共有する」のトグル自体が無効になり、
+「iCloudにサインインすると利用できます」と表示されます。</div>
+        </section>
+        <section class="manual-section" id="owner">
+          <h2>招待する側（オーナー）の設定</h2>
+
+<ol class="steps">
+  <li>ホーム右上の <kbd>⚙️ 歯車</kbd>（設定タブ）から設定を開きます。</li>
+  <li>「パートナー共有設定」を開き、<strong>「パートナーと家計簿を共有する」</strong>をONにします。</li>
+  <li>同じ画面の「ペアリング」欄で<strong>「パートナーのメールアドレスで招待」</strong>をタップし、
+      パートナーが iCloud にサインインしているメールアドレスを入力して「招待」をタップします。</li>
+  <li>表示される招待中のシートで招待先のメールアドレスを確認し、<strong>QRコード</strong>をパートナーに見せるか、
+      <strong>「リンクをコピー」</strong>で招待リンクを渡します。このシートでは他の人の追加や権限変更はできません。</li>
+  <li>シートを閉じると「参加依頼を送信済み」と表示されます。パートナーが参加すると<strong>「ペアリング済み」</strong>に変わります。</li>
+  <li>「自分の負担割合」のスライダーで自分の負担割合を決めます（例: 自分60%・相手40%なら60%に）。</li>
+  <li>毎月精算する場合は<strong>「共有データの締め作業をする」</strong>をONにし、「締め日」と「締め作業実施日」を選びます。</li>
+  <li>必要に応じて「締め作業確定時に精算データを作成する」をONにすると、精算金額が家計簿に自動で記帳されます。</li>
+  <li>自分のお小遣いなども一緒に管理したい場合は「自分の個人支出も管理する」をONにします。</li>
+</ol>
+<div class="callout tip">ひとりで使う場合は手順2のトグルをOFFのままにしてください。
+割り勘や未精算額の表示が消え、シンプルな家計簿になります。</div>
+<div class="callout note">招待メールアドレスに対応する iCloud アカウントが見つからない場合は、
+「〇〇の iCloud アカウントが見つかりませんでした。相手が iCloud にサインインしているか、
+メールアドレスに誤りがないかを確認してください」と表示されます。</div>
+        </section>
+        <section class="manual-section" id="guest">
+          <h2>招待された側（参加者）の参加方法</h2>
+
+<p>パートナーがあなたのメールアドレスを指定して招待を送ると、招待リンクまたはQRコードが届きます
+（あなたの端末も iCloud にサインインしている必要があります）。</p>
+<ol class="steps">
+  <li>受け取った<strong>招待リンクをそのままタップ</strong>します。そのままアプリが開いて参加が完了し、
+      「ペアリング済み」と表示されます。</li>
+  <li>リンクをタップしてもアプリが開かない場合や、QRコードで受け取った場合は、
+      <kbd>⚙️ 設定</kbd> →「パートナー共有設定」を開きます。<strong>共有をONにしていなくても</strong>、
+      「ペアリング」欄の「招待を受け取った方はこちら」の下にある
+      <strong>「招待リンクを貼り付けて参加」</strong>または<strong>「QRコードを読み取って参加」</strong>から参加できます。</li>
+  <li>参加が完了すると<strong>「パートナーと家計簿を共有する」は自動的にONになり</strong>、
+      オーナーが「共有」に設定しているカテゴリ・自動分類ルール・予算、精算に関する共有設定、
+      共通支払の記録がまとめて取り込まれます。あなたの個人カテゴリ・個人支払の記録はそのまま残ります。</li>
+</ol>
+<div class="callout tip">招待される側は、事前に共有をONにしておく必要はありません。
+共有OFFのままでも「ペアリング」欄には常に参加用の2ボタンが表示されます。</div>
+<div class="callout note">参加した直後に「オーナー側の共有データがまだ届いていません」と表示された場合は、
+<strong>オーナー側の端末でアプリを開いてもらうだけで解消します</strong>。
+自動でオーナーへ送信のお願いが届き、オーナーがアプリを開いた時点で共有データが送信され、
+あなたの端末にも自動で取り込まれます。あなた側での操作は不要です。</div>
+        </section>
+        <section class="manual-section" id="sync">
+          <h2>同期のタイミングと同期エラー</h2>
+
+<p>「パートナーと家計簿を共有する」がON・ペアリング済み・iCloud利用可能のときだけ、
+共通支払の支出記録が2人の端末間で自動的に同期されます。同期されるのは次のタイミングです。</p>
+<ul class="checklist">
+  <li><span class="check-icon">✓</span><div>アプリを開いたとき</div></li>
+  <li><span class="check-icon">✓</span><div>支出一覧を下に引っ張って更新したとき</div></li>
+  <li><span class="check-icon">✓</span><div>締め作業を確定・表示したとき</div></li>
+</ul>
+<p>すぐに反映したいときは、ペアリング済み表示の<strong>「今すぐ同期」</strong>ボタンをタップしてください。
+オーナー・参加者どちらの端末でも、共有設定・共通支払の同期をその場で実行できます。
+最終同期の日時も同じ場所で確認できます。</p>
+<div class="callout note">同期に失敗した場合は、ペアリング済み表示に
+「前回の同期に失敗: &lt;理由&gt;」とオレンジ文字で表示されます。
+まず共有トグルがONか、次にネットワーク接続・iCloudのサインイン状態・iCloudの空き容量を確認してください。</div>
+<div class="callout tip">共有ON中は招待の承諾もこれらのタイミングで自動的に確認されるため、
+パートナーがリンクを開いた後は「状態を確認」を押さなくても自動で「ペアリング済み」になります。</div>
+        </section>
+        <section class="manual-section" id="split">
+          <h2>割り勘・立替を記録する</h2>
+
+<h3>ふつうの割り勘で記録する</h3>
+<ol class="steps">
+  <li>支出の入力時に<strong>支払区分で「共通支払」</strong>を選びます。</li>
+  <li>そのまま保存すれば、設定した割合（例: 60:40）で精算時に自動計算されます。</li>
+</ol>
+<p>家賃や食費など二人で分け合う支出は「共通支払」、自分の趣味や個人的な買い物など
+精算対象から外したい支出は「個人支払」を選びます。</p>
+<h3>この支払だけ割合を変える</h3>
+<ol class="steps">
+  <li>「負担割合」のスライダーを動かして、この支払だけの割合を決めます（5%刻み）。</li>
+  <li><kbd>デフォルト</kbd> ボタンでいつもの割合に戻せます。</li>
+</ol>
+<p>パーセントの直接入力のほか、1円単位での金額の切り分けにも対応しています。</p>
+<h3>相手の分を立て替えた・立て替えてもらった</h3>
+<ol class="steps">
+  <li>相手が払ってくれた支出を自分が入力する場合は<strong>「代理入力」</strong>をONにします（支払者が「相手」になります）。</li>
+  <li><kbd>立替</kbd> ボタンを押すと、負担割合が自動で100%または0%に切り替わり、
+      全額をどちらかが負担する記録になります。</li>
+</ol>
+<div class="table-wrap">
+<table>
+<tr><th>バッジ</th><th>意味</th></tr>
+<tr><td>立替</td><td>負担割合が「100:0」または「0:100」（どちらか一方の全額負担）の明細</td></tr>
+<tr><td>カスタム</td><td>デフォルト割合から変更されているが、全額負担ではない明細</td></tr>
+</table>
+</div>
+<div class="callout tip">立て替えたお金は精算時に100%相手（または自分）の負担として計算されます。</div>
+        </section>
+        <section class="manual-section" id="shared-category">
+          <h2>カテゴリ・自動分類ルールを共有する</h2>
+
+<p>カテゴリと自動分類ルールは、それぞれ1件ずつ「個人」か「パートナーと共有」かを選べます。
+「パートナーと共有」にしたものだけがパートナーの端末へ配信され、「個人」のままのものはあなたの端末だけで使われます
+（自分の他の端末とは引き続き同期されます）。</p>
+<ol class="steps">
+  <li>カテゴリまたは自動分類ルールの編集画面で「共有」を「個人」または「パートナーと共有」に切り替えます。</li>
+  <li>大分類を「個人」から「パートナーと共有」に切り替えると、小分類が個人のまま残っている場合は
+      「小分類もまとめて共有にしますか？」と確認されます。</li>
+</ol>
+<p>パートナー共有設定の<strong>「共有するカテゴリを選ぶ」</strong>から、まとめてトグル選択することもできます。
+未ペアリング・承認待ちのあいだは「共有の予約」として保持され、ペアリングが成立した時点で自動的に共有区分へ昇格します。</p>
+<div class="callout tip">この「共有」の切り替えは<strong>ペアリング中はオーナーだけが操作できます</strong>。
+参加者が共有カテゴリ・共有ルールの編集画面を開くと、内容の確認はできますが変更はできません。</div>
+<div class="callout note">親カテゴリが「個人」のままでは、その小分類だけを「パートナーと共有」にすることはできません
+（先に親カテゴリを共有にする必要があります）。同様に、分類先のカテゴリが「個人」のままでは、
+その自動分類ルールを共有にできません。逆に、共有中の小分類が残っている大分類は「個人」に戻せません。</div>
+        </section>
+        <section class="manual-section" id="owner-priority">
+          <h2>設定はオーナー側が優先されます</h2>
+
+<p>精算に関する設定（自分の負担割合・共有データの締め作業をする・締め日・締め作業実施日・自動精算・
+自動精算の記帳内容とカテゴリ）は、ペアリング中は<strong>オーナーが設定した内容が参加者の端末にも反映されます</strong>。</p>
+<p>参加者側の端末でこれらの設定を変更しても、オーナー側には反映されません
+（オーナー側の設定が優先され、次の同期で参加者側の変更は上書きされます）。</p>
+        </section>
+        <section class="manual-section" id="pause">
+          <h2>共有を一時停止・再開する</h2>
+
+<p>「パートナーと家計簿を共有する」をOFFにすると、新しい共有台帳の同期を<strong>一時停止</strong>できます。
+ペアリング関係、これまでに同期した端末内の明細、iCloud上の共有レコードは残ります。
+ONに戻すと、保持した状態からすぐに同期を再開します。</p>
+<div class="callout note">OFF中も、承認待ちなら「状態を確認」と「招待を取り消す」、
+ペアリング済みなら「ペアリングを解除」を設定画面から操作できます。
+<strong>パートナーとの共有を完全に解除したい場合は、トグルをOFFにするだけでなく
+「招待を取り消す」または「ペアリングを解除」を実行してください。</strong></div>
+        </section>
+        <section class="manual-section" id="unpair">
+          <h2>ペアリングを解除する</h2>
+
+<ol class="steps">
+  <li>「パートナー共有設定」の「ペアリング」欄で <strong>「ペアリングを解除」</strong> をタップします。</li>
+  <li>確認ダイアログで、取込済みの共通支払の明細をどうするか選びます。
+      <strong>「解除（取込データを残す）」</strong>を選ぶと明細はそのまま残ります。
+      <strong>「解除して相手作成の明細を削除」</strong>を選ぶと、この端末に取り込まれた
+      パートナー作成の共通支払明細だけを削除できます。</li>
+</ol>
+<div class="callout note">解除しても、これまでに同期された共通支払の明細は<strong>お互いの端末にローカルデータとして残ります</strong>。
+この操作で消せるのは自分の端末にある「相手作成の明細」だけで、相手の端末に残ったデータをこちらから消すことはできません。
+再度共有したい場合は招待をやり直してください。</div>
+<div class="callout note">ペアリングを解除すると（自分で解除した場合も、相手が解除したのを検知した場合も）、
+<strong>「パートナーと共有」にしていたカテゴリ・自動分類ルールは自動的に「個人」へ戻ります</strong>。
+データが削除されるわけではなく、共有の指定が外れるだけです。
+これは、次に別の相手とペアリングし直したときに、以前の共有設定のまま意図せず配信されるのを防ぐための動作です。
+「招待を取り消す」で承認待ちをキャンセルした場合も同様に「個人」へ戻ります。</div>
+<div class="callout tip">パートナーが先に解除した場合は、あなたの端末のペアリングは自動的に未設定へ戻ります。
+アプリ内お知らせに「パートナー共有が解除されました」が届き、それまで取り込んでいた明細はこの端末に残ります。</div>
+        </section>
+
+        <!-- Google AdSense 自動広告表示エリア（余白確保用プレースホルダー） -->
+        <div class="ad-placeholder">
+          <span class="ad-label">AD</span>
+          <p>この付近に Google AdSense 自動広告が表示される予定です。</p>
+        </div>
+
+        <nav class="page-nav">
+          <a class="page-nav-item prev" href="../receipt/index.html"><span>← 前のページ</span><strong>🧾 レシート・写真から取り込む</strong></a>
+          <a class="page-nav-item next" href="../settlement/index.html"><span>次のページ →</span><strong>✅ 月の締め作業と精算</strong></a>
+        </nav>
+
+
+        <footer class="site-footer">© 2026 MyKakeibo 開発者</footer>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+</body>
+</html>

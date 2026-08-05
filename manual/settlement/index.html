@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>月の締め作業と精算｜スマート家計簿 使い方マニュアル</title>
+  <meta name="description" content="月次の確定作業、精算金額の確定、自動精算の記帳、締めサマリーの共有。" />
+  <link rel="stylesheet" href="../../style.css" />
+</head>
+<body>
+  <div class="app-shell">
+
+    <div class="mobile-topbar">
+      <div class="brand"><span class="logo-icon">💰</span>スマート家計簿</div>
+      <button class="hamburger-btn" data-sidebar-toggle aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="sidebar-overlay" data-sidebar-overlay></div>
+
+    <aside class="sidebar" data-sidebar>
+      <div class="sidebar-brand"><span class="logo-icon">💰</span>スマート家計簿</div>
+      <ul class="nav-list">
+        <li><a class="nav-link" href="../../index.html"><span class="nav-icon">🏠</span>ホーム</a></li>
+        <li>
+          <a class="nav-link" href="../../manual/index.html"><span class="nav-icon">📖</span>使い方マニュアル</a>
+          <ul class="nav-sub-list">
+            <li><a class="nav-link" href="../../manual/getting-started/index.html"><span class="nav-icon">🚀</span>はじめに・初期設定</a></li>
+            <li><a class="nav-link" href="../../manual/transactions/index.html"><span class="nav-icon">✏️</span>支出を記録する</a></li>
+            <li><a class="nav-link" href="../../manual/receipt/index.html"><span class="nav-icon">🧾</span>レシート・写真から取り込む</a></li>
+            <li><a class="nav-link" href="../../manual/partner/index.html"><span class="nav-icon">👫</span>パートナーと共有する</a></li>
+            <li><a class="nav-link is-active" href="../../manual/settlement/index.html"><span class="nav-icon">✅</span>月の締め作業と精算</a></li>
+            <li><a class="nav-link" href="../../manual/csv/index.html"><span class="nav-icon">📄</span>CSVインポート</a></li>
+            <li><a class="nav-link" href="../../manual/fixed-cost/index.html"><span class="nav-icon">🔁</span>固定費と登録提案</a></li>
+            <li><a class="nav-link" href="../../manual/budget/index.html"><span class="nav-icon">🎯</span>予算管理</a></li>
+            <li><a class="nav-link" href="../../manual/category/index.html"><span class="nav-icon">🗂️</span>カテゴリと自動分類</a></li>
+            <li><a class="nav-link" href="../../manual/report/index.html"><span class="nav-icon">📊</span>レポートを見る</a></li>
+            <li><a class="nav-link" href="../../manual/ai/index.html"><span class="nav-icon">✨</span>AIチャット</a></li>
+            <li><a class="nav-link" href="../../manual/notification/index.html"><span class="nav-icon">🔔</span>通知・お問い合わせ</a></li>
+            <li><a class="nav-link" href="../../manual/premium/index.html"><span class="nav-icon">👑</span>プレミアム</a></li>
+          </ul>
+        </li>
+        <li><a class="nav-link" href="../../faq/index.html"><span class="nav-icon">💡</span>よくある質問（FAQ）</a></li>
+        <li>
+          <a class="nav-link" href="../../articles/index.html"><span class="nav-icon">💰</span>お役立ちマネー情報</a>
+          <ul class="nav-sub-list">
+            <li><a class="nav-link" href="../../articles/savings/index.html"><span class="nav-icon">⚡</span>節約術</a></li>
+            <li><a class="nav-link" href="../../articles/investment/index.html"><span class="nav-icon">📈</span>資産形成</a></li>
+            <li><a class="nav-link" href="../../articles/poikatsu/index.html"><span class="nav-icon">🪙</span>ポイ活</a></li>
+            <li><a class="nav-link" href="../../articles/efficiency/index.html"><span class="nav-icon">🚀</span>効率化</a></li>
+            <li><a class="nav-link" href="../../articles/goods/index.html"><span class="nav-icon">🛍️</span>グッズ</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="nav-divider"></div>
+      <ul class="nav-list">
+        <li><a class="nav-link" href="../../privacy-policy.html"><span class="nav-icon">📜</span>プライバシーポリシー</a></li>
+      </ul>
+    </aside>
+
+    <div class="main-content">
+      <div class="content-inner">
+
+        <div class="breadcrumb"><a href="../../index.html">ホーム</a> / <a href="../index.html">使い方マニュアル</a> / 月の締め作業と精算</div>
+
+        <header class="page-header">
+          <span class="eyebrow">MANUAL / MONTHLY SETTLEMENT</span>
+          <h1>✅ 月の締め作業と精算</h1>
+          <p>月に一度、その月の共通支払を確認して精算金額を確定する作業です。締めると明細が凍結され、確定レポートとして保存されます。</p>
+        </header>
+
+        <nav class="manual-toc">
+          <div class="manual-toc-title">このページの内容</div>
+          <ul>
+            <li><a href="#prepare">締め作業タブが表示される条件</a></li>
+            <li><a href="#flow">締め作業の手順</a></li>
+            <li><a href="#lock">締めると何が起こるか</a></li>
+            <li><a href="#double">二重締めの防止</a></li>
+            <li><a href="#cancel">締めを取り消す</a></li>
+            <li><a href="#auto-entry">精算データの自動記帳</a></li>
+            <li><a href="#summary">締めサマリーを共有する</a></li>
+          </ul>
+        </nav>
+
+        <section class="manual-section" id="prepare">
+          <h2>締め作業タブが表示される条件</h2>
+
+<p>締め作業タブは、<kbd>⚙️ 設定</kbd> →「パートナー共有設定」で
+<strong>「パートナーと家計簿を共有する」と「共有データの締め作業をする」の両方がON</strong>のときだけ表示されます。
+どちらかがOFFになった瞬間、締め作業タブは非表示になります（表示中だった場合は支出一覧タブへ自動的に戻ります）。</p>
+        </section>
+        <section class="manual-section" id="flow">
+          <h2>締め作業の手順</h2>
+
+<ol class="steps">
+  <li>「締め作業」タブを開きます。対象の月が自動で選ばれています（前回締めた月の翌月）。</li>
+  <li>一覧の支出をひとつずつ確認し、左の <kbd>○</kbd> をタップしてチェックを付けます。
+      内容を直したいときは右の ✏️ をタップします。</li>
+  <li>全部まとめてチェックしたいときは「一括選択」が使えます。</li>
+  <li>途中でやめるときは「下書き保存（中断）」をタップすれば、チェック状態が保存されます。</li>
+  <li>確認が終わったら「◯年◯月の締め作業を完了する」をタップします。</li>
+  <li>確認ダイアログで「完了する」を選ぶと、精算金額が確定してレポートに保存されます。</li>
+</ol>
+<div class="callout tip">確定チェックの変更やカテゴリの変更などの操作は、その都度自動保存されます。
+途中でアプリを閉じても作業内容は失われません。</div>
+<div class="callout note"><strong>締め作業を実行できるのはオーナーだけです。</strong>
+参加者も支払データのチェックによる確定・確定解除はできますが、締めの実行はできません。
+参加者の画面にはその案内が表示されるので、確認が終わったらオーナーに締めを依頼してください。</div>
+        </section>
+        <section class="manual-section" id="lock">
+          <h2>締めると何が起こるか</h2>
+
+<ul class="checklist">
+  <li><span class="check-icon">✓</span><div>その月の支出データが<strong>ロック（凍結）</strong>され、🔒マークが付いて編集・削除できなくなります。</div></li>
+  <li><span class="check-icon">✓</span><div>その月の最終的な<strong>精算金額とカテゴリ別の支出</strong>が「確定レポート」として保存されます。</div></li>
+  <li><span class="check-icon">✓</span><div>締め作業完了直後に、<strong>精算サマリー画面</strong>が自動で開きます。</div></li>
+</ul>
+<div class="callout note">未確定のデータが残ったまま完了しようとすると警告が表示されます。
+そのまま締めた場合、未確定データは精算対象に含まれず、翌月以降の締め作業画面に
+「過去の未確定データ」として引き続き表示されます。</div>
+        </section>
+        <section class="manual-section" id="double">
+          <h2>二重締めの防止</h2>
+
+<p>パートナーが自分の端末で先に締めを完了した月は、あなたの端末でも自動的に「締め済み」と表示されます
+（「この月はパートナー側で締め済みです」）。この月は<strong>再度締めることも、取り消すこともできません</strong>。
+精算額はパートナーの端末で確認してください。</p>
+<div class="callout tip">締め作業は必ずどちらか一方の端末で行うようにしましょう。</div>
+        </section>
+        <section class="manual-section" id="cancel">
+          <h2>締めを取り消す</h2>
+
+<p>間違えて締め完了にしてしまった場合は、締め作業画面で該当月を表示し、
+<strong>「この月の締めを取り消す」</strong>から解除できます。</p>
+<ul class="checklist">
+  <li><span class="check-icon">✓</span><div>明細のロックが解除され、再編集・再締めができるようになります。</div></li>
+  <li><span class="check-icon">✓</span><div>自動で起票された精算明細と、確定レポートは削除されます。</div></li>
+</ul>
+<div class="callout note">パートナー側で締められた月は取り消せません（前項参照）。</div>
+        </section>
+        <section class="manual-section" id="auto-entry">
+          <h2>精算データの自動記帳</h2>
+
+<p>「締め作業確定時に精算データを作成する」をONにしている場合、精算金額が
+<strong>「自動精算」という支払として自動で記帳</strong>されます。受け取る側のときはマイナス金額で記録されます。</p>
+<p>支払名（初期値: 共通支出の精算）やカテゴリは「パートナー共有設定」で変更できます。</p>
+        </section>
+        <section class="manual-section" id="summary">
+          <h2>締めサマリーを共有する</h2>
+
+<p>締め作業を完了すると、その月の精算サマリー画面が自動で開きます。
+<strong>「画像で保存」</strong>ボタンで、パートナーに送れるカード画像を生成できます。</p>
+<p>サマリーを閉じると、自動的に支出一覧タブへ戻ります。</p>
+        </section>
+
+        <!-- Google AdSense 自動広告表示エリア（余白確保用プレースホルダー） -->
+        <div class="ad-placeholder">
+          <span class="ad-label">AD</span>
+          <p>この付近に Google AdSense 自動広告が表示される予定です。</p>
+        </div>
+
+        <nav class="page-nav">
+          <a class="page-nav-item prev" href="../partner/index.html"><span>← 前のページ</span><strong>👫 パートナーと共有する</strong></a>
+          <a class="page-nav-item next" href="../csv/index.html"><span>次のページ →</span><strong>📄 CSVインポート</strong></a>
+        </nav>
+
+
+        <footer class="site-footer">© 2026 MyKakeibo 開発者</footer>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+</body>
+</html>

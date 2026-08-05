@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>レポートを見る｜スマート家計簿 使い方マニュアル</title>
+  <meta name="description" content="月次レポート・年次レポート、予算対比、レポートコメント、外部AIへの共有。" />
+  <link rel="stylesheet" href="../../style.css" />
+</head>
+<body>
+  <div class="app-shell">
+
+    <div class="mobile-topbar">
+      <div class="brand"><span class="logo-icon">💰</span>スマート家計簿</div>
+      <button class="hamburger-btn" data-sidebar-toggle aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="sidebar-overlay" data-sidebar-overlay></div>
+
+    <aside class="sidebar" data-sidebar>
+      <div class="sidebar-brand"><span class="logo-icon">💰</span>スマート家計簿</div>
+      <ul class="nav-list">
+        <li><a class="nav-link" href="../../index.html"><span class="nav-icon">🏠</span>ホーム</a></li>
+        <li>
+          <a class="nav-link" href="../../manual/index.html"><span class="nav-icon">📖</span>使い方マニュアル</a>
+          <ul class="nav-sub-list">
+            <li><a class="nav-link" href="../../manual/getting-started/index.html"><span class="nav-icon">🚀</span>はじめに・初期設定</a></li>
+            <li><a class="nav-link" href="../../manual/transactions/index.html"><span class="nav-icon">✏️</span>支出を記録する</a></li>
+            <li><a class="nav-link" href="../../manual/receipt/index.html"><span class="nav-icon">🧾</span>レシート・写真から取り込む</a></li>
+            <li><a class="nav-link" href="../../manual/partner/index.html"><span class="nav-icon">👫</span>パートナーと共有する</a></li>
+            <li><a class="nav-link" href="../../manual/settlement/index.html"><span class="nav-icon">✅</span>月の締め作業と精算</a></li>
+            <li><a class="nav-link" href="../../manual/csv/index.html"><span class="nav-icon">📄</span>CSVインポート</a></li>
+            <li><a class="nav-link" href="../../manual/fixed-cost/index.html"><span class="nav-icon">🔁</span>固定費と登録提案</a></li>
+            <li><a class="nav-link" href="../../manual/budget/index.html"><span class="nav-icon">🎯</span>予算管理</a></li>
+            <li><a class="nav-link" href="../../manual/category/index.html"><span class="nav-icon">🗂️</span>カテゴリと自動分類</a></li>
+            <li><a class="nav-link is-active" href="../../manual/report/index.html"><span class="nav-icon">📊</span>レポートを見る</a></li>
+            <li><a class="nav-link" href="../../manual/ai/index.html"><span class="nav-icon">✨</span>AIチャット</a></li>
+            <li><a class="nav-link" href="../../manual/notification/index.html"><span class="nav-icon">🔔</span>通知・お問い合わせ</a></li>
+            <li><a class="nav-link" href="../../manual/premium/index.html"><span class="nav-icon">👑</span>プレミアム</a></li>
+          </ul>
+        </li>
+        <li><a class="nav-link" href="../../faq/index.html"><span class="nav-icon">💡</span>よくある質問（FAQ）</a></li>
+        <li>
+          <a class="nav-link" href="../../articles/index.html"><span class="nav-icon">💰</span>お役立ちマネー情報</a>
+          <ul class="nav-sub-list">
+            <li><a class="nav-link" href="../../articles/savings/index.html"><span class="nav-icon">⚡</span>節約術</a></li>
+            <li><a class="nav-link" href="../../articles/investment/index.html"><span class="nav-icon">📈</span>資産形成</a></li>
+            <li><a class="nav-link" href="../../articles/poikatsu/index.html"><span class="nav-icon">🪙</span>ポイ活</a></li>
+            <li><a class="nav-link" href="../../articles/efficiency/index.html"><span class="nav-icon">🚀</span>効率化</a></li>
+            <li><a class="nav-link" href="../../articles/goods/index.html"><span class="nav-icon">🛍️</span>グッズ</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="nav-divider"></div>
+      <ul class="nav-list">
+        <li><a class="nav-link" href="../../privacy-policy.html"><span class="nav-icon">📜</span>プライバシーポリシー</a></li>
+      </ul>
+    </aside>
+
+    <div class="main-content">
+      <div class="content-inner">
+
+        <div class="breadcrumb"><a href="../../index.html">ホーム</a> / <a href="../index.html">使い方マニュアル</a> / レポートを見る</div>
+
+        <header class="page-header">
+          <span class="eyebrow">MANUAL / REPORT</span>
+          <h1>📊 レポートを見る</h1>
+          <p>月次・年次のグラフで支出を振り返ります。予算との比較や、月ごとのメモ書きもここで行えます。</p>
+        </header>
+
+        <nav class="manual-toc">
+          <div class="manual-toc-title">このページの内容</div>
+          <ul>
+            <li><a href="#monthly">月次レポート</a></li>
+            <li><a href="#annual">年次レポート（プレミアム）</a></li>
+            <li><a href="#basis">集計の基準を切り替える</a></li>
+            <li><a href="#comment">レポートにコメントを残す</a></li>
+            <li><a href="#ai-share">外部AIへ共有する</a></li>
+          </ul>
+        </nav>
+
+        <section class="manual-section" id="monthly">
+          <h2>月次レポート</h2>
+
+<p>「レポート」タブを開くと、まず<strong>月次レポート</strong>が表示されます
+（画面上部のセグメントで月次／年次を切り替えられます）。</p>
+<ul class="checklist">
+  <li><span class="check-icon">✓</span><div>選んだ月の<strong>カテゴリ構成比（円グラフ）</strong>とカテゴリ内訳が確認できます。</div></li>
+  <li><span class="check-icon">✓</span><div><strong>予算対比</strong>が「使った額/予算」のバーで表示され、超過すると赤色になります。</div></li>
+  <li><span class="check-icon">✓</span><div>カテゴリ内訳の行をタップすると、その明細を日付ごとにまとめて表示します。
+      日付・金額の並び順はワンタップで切り替えられます。</div></li>
+</ul>
+        </section>
+        <section class="manual-section" id="annual">
+          <h2>年次レポート（プレミアム）</h2>
+
+<p><strong>年次レポート</strong>では、1年間の収支バランスと月別の積み上げ棒グラフに加えて、
+カテゴリごとに月ごとの支出と予算を比較できます。カテゴリをタップすると、月別の支出・予算・消化状況が開きます。</p>
+<p>棒グラフの月をタップすると、その月の内訳（円グラフ）と予算との比較を表示する月次詳細が開きます。</p>
+<div class="callout note">年次レポートは<strong>プレミアム限定</strong>です。</div>
+        </section>
+        <section class="manual-section" id="basis">
+          <h2>集計の基準を切り替える</h2>
+
+<p>「日付基準/確定基準」で、すべてのデータで見るか、締め確認済みのデータだけで見るかを選べます。
+上部の <kbd>◀</kbd> <kbd>▶</kbd> で年・月を切り替えられます。</p>
+<p>初期表示（集計基準／表示対象／カテゴリ表示）は <kbd>⚙️ 設定</kbd> →
+<strong>「レポート設定」</strong>であらかじめ決めておけます。</p>
+        </section>
+        <section class="manual-section" id="comment">
+          <h2>レポートにコメントを残す</h2>
+
+<p>月次レポート・年次レポートの末尾には、<strong>表示中の年月（年次は年）に紐づくコメント入力欄</strong>があります。
+「今月は旅行があったので食費が多め」といったメモを残しておくと、あとから見返したときに理由が分かります。
+入力内容は自動保存されます。</p>
+        </section>
+        <section class="manual-section" id="ai-share">
+          <h2>外部AIへ共有する</h2>
+
+<p>レポート画面の<strong>「外部AIへ共有」</strong>は、プレミアム未加入でも<strong>全ユーザーが利用できます</strong>。</p>
+<ol class="steps">
+  <li><kbd>⚙️ 設定</kbd> →「AI設定」の<strong>「共有コンテキスト」</strong>に、共有用のテンプレートを登録しておきます。</li>
+  <li>レポート画面で「外部AIへ共有」を選び、使いたいコンテキストを選択します。</li>
+  <li>JSON形式の支払データ・予算データが共有されます。コンテキストごとに、
+      グラフ画像を一緒に送るかどうかも切り替えられます。</li>
+</ol>
+<p>アプリの中で完結するAIチャットについては<a href="../ai/index.html">AIチャット</a>をご覧ください。</p>
+        </section>
+
+        <!-- Google AdSense 自動広告表示エリア（余白確保用プレースホルダー） -->
+        <div class="ad-placeholder">
+          <span class="ad-label">AD</span>
+          <p>この付近に Google AdSense 自動広告が表示される予定です。</p>
+        </div>
+
+        <nav class="page-nav">
+          <a class="page-nav-item prev" href="../category/index.html"><span>← 前のページ</span><strong>🗂️ カテゴリと自動分類</strong></a>
+          <a class="page-nav-item next" href="../ai/index.html"><span>次のページ →</span><strong>✨ AIチャット</strong></a>
+        </nav>
+
+
+        <footer class="site-footer">© 2026 MyKakeibo 開発者</footer>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+</body>
+</html>

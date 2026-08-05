@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>支出を記録する｜スマート家計簿 使い方マニュアル</title>
+  <meta name="description" content="支出・入金の入力、電卓キーパッド、サジェスト、編集・削除、一括操作、下書き。" />
+  <link rel="stylesheet" href="../../style.css" />
+</head>
+<body>
+  <div class="app-shell">
+
+    <div class="mobile-topbar">
+      <div class="brand"><span class="logo-icon">💰</span>スマート家計簿</div>
+      <button class="hamburger-btn" data-sidebar-toggle aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="sidebar-overlay" data-sidebar-overlay></div>
+
+    <aside class="sidebar" data-sidebar>
+      <div class="sidebar-brand"><span class="logo-icon">💰</span>スマート家計簿</div>
+      <ul class="nav-list">
+        <li><a class="nav-link" href="../../index.html"><span class="nav-icon">🏠</span>ホーム</a></li>
+        <li>
+          <a class="nav-link" href="../../manual/index.html"><span class="nav-icon">📖</span>使い方マニュアル</a>
+          <ul class="nav-sub-list">
+            <li><a class="nav-link" href="../../manual/getting-started/index.html"><span class="nav-icon">🚀</span>はじめに・初期設定</a></li>
+            <li><a class="nav-link is-active" href="../../manual/transactions/index.html"><span class="nav-icon">✏️</span>支出を記録する</a></li>
+            <li><a class="nav-link" href="../../manual/receipt/index.html"><span class="nav-icon">🧾</span>レシート・写真から取り込む</a></li>
+            <li><a class="nav-link" href="../../manual/partner/index.html"><span class="nav-icon">👫</span>パートナーと共有する</a></li>
+            <li><a class="nav-link" href="../../manual/settlement/index.html"><span class="nav-icon">✅</span>月の締め作業と精算</a></li>
+            <li><a class="nav-link" href="../../manual/csv/index.html"><span class="nav-icon">📄</span>CSVインポート</a></li>
+            <li><a class="nav-link" href="../../manual/fixed-cost/index.html"><span class="nav-icon">🔁</span>固定費と登録提案</a></li>
+            <li><a class="nav-link" href="../../manual/budget/index.html"><span class="nav-icon">🎯</span>予算管理</a></li>
+            <li><a class="nav-link" href="../../manual/category/index.html"><span class="nav-icon">🗂️</span>カテゴリと自動分類</a></li>
+            <li><a class="nav-link" href="../../manual/report/index.html"><span class="nav-icon">📊</span>レポートを見る</a></li>
+            <li><a class="nav-link" href="../../manual/ai/index.html"><span class="nav-icon">✨</span>AIチャット</a></li>
+            <li><a class="nav-link" href="../../manual/notification/index.html"><span class="nav-icon">🔔</span>通知・お問い合わせ</a></li>
+            <li><a class="nav-link" href="../../manual/premium/index.html"><span class="nav-icon">👑</span>プレミアム</a></li>
+          </ul>
+        </li>
+        <li><a class="nav-link" href="../../faq/index.html"><span class="nav-icon">💡</span>よくある質問（FAQ）</a></li>
+        <li>
+          <a class="nav-link" href="../../articles/index.html"><span class="nav-icon">💰</span>お役立ちマネー情報</a>
+          <ul class="nav-sub-list">
+            <li><a class="nav-link" href="../../articles/savings/index.html"><span class="nav-icon">⚡</span>節約術</a></li>
+            <li><a class="nav-link" href="../../articles/investment/index.html"><span class="nav-icon">📈</span>資産形成</a></li>
+            <li><a class="nav-link" href="../../articles/poikatsu/index.html"><span class="nav-icon">🪙</span>ポイ活</a></li>
+            <li><a class="nav-link" href="../../articles/efficiency/index.html"><span class="nav-icon">🚀</span>効率化</a></li>
+            <li><a class="nav-link" href="../../articles/goods/index.html"><span class="nav-icon">🛍️</span>グッズ</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="nav-divider"></div>
+      <ul class="nav-list">
+        <li><a class="nav-link" href="../../privacy-policy.html"><span class="nav-icon">📜</span>プライバシーポリシー</a></li>
+      </ul>
+    </aside>
+
+    <div class="main-content">
+      <div class="content-inner">
+
+        <div class="breadcrumb"><a href="../../index.html">ホーム</a> / <a href="../index.html">使い方マニュアル</a> / 支出を記録する</div>
+
+        <header class="page-header">
+          <span class="eyebrow">MANUAL / TRANSACTIONS</span>
+          <h1>✏️ 支出を記録する</h1>
+          <p>毎日いちばんよく使う画面です。基本の入力手順に加えて、入力を早くするサジェスト・電卓キーパッド、まとめて直す一括操作、下書きの扱いまで説明します。</p>
+        </header>
+
+        <nav class="manual-toc">
+          <div class="manual-toc-title">このページの内容</div>
+          <ul>
+            <li><a href="#add">支出・入金を追加する</a></li>
+            <li><a href="#keypad">金額を電卓で計算しながら入力する</a></li>
+            <li><a href="#quick">入力を早くする（サジェスト・前回と同じ）</a></li>
+            <li><a href="#edit">記録した支出を直す・消す</a></li>
+            <li><a href="#search">探す・絞り込む</a></li>
+            <li><a href="#bulk">まとめて操作する（複数選択モード）</a></li>
+            <li><a href="#draft">下書き（仮データ）を仕上げる</a></li>
+          </ul>
+        </nav>
+
+        <section class="manual-section" id="add">
+          <h2>支出・入金を追加する</h2>
+
+<ol class="steps">
+  <li>「支出一覧」タブ右下の <kbd>＋</kbd> ボタンをタップします。</li>
+  <li>画面上部の <strong>「支出 / 入金」</strong>を選びます。給与や臨時収入は「入金」を選んでください。</li>
+  <li>支払名（例: スーパー、電気代）を入力します。入力欄には自動でカーソルが入ります。</li>
+  <li>キーボードの「次へ」を押すと金額欄に移動するので、金額を入力します。</li>
+  <li>日付が今日でない場合は日付をタップして変更します。</li>
+  <li>カテゴリの一覧から当てはまるものをタップします（あとから変更もできます）。</li>
+  <li>必要ならメモを入力し、右上の <kbd>保存</kbd> をタップして完了です。</li>
+</ol>
+<div class="callout tip"><strong>「支払名」と「メモ」の使い分け</strong>：支払名はお店やサービス名など支出の内容を表す名前で、
+一覧に優先して表示されます。メモは補足情報用で、支払名が未入力のときだけ一覧に表示されます。</div>
+<div class="callout note">金額は1円以上で入力してください。0円のまま保存しようとすると、
+金額欄が赤枠になり「金額を1円以上で入力してください」と表示されます。</div>
+        </section>
+        <section class="manual-section" id="keypad">
+          <h2>金額を電卓で計算しながら入力する</h2>
+
+<p>金額欄をタップすると、専用の<strong>電卓キーパッド</strong>が開きます。
+数字だけでなく <code>+</code> <code>-</code> <code>×</code> <code>÷</code> を使った数式をそのまま入力でき、
+確定すると計算結果が金額として入ります。</p>
+<div class="callout tip">「レジで3人分まとめて払った」「割引後の金額を出したい」といったとき、
+電卓アプリに切り替えずにそのまま計算できます。</div>
+        </section>
+        <section class="manual-section" id="quick">
+          <h2>入力を早くする（サジェスト・前回と同じ）</h2>
+
+<h3>支払名のサジェスト</h3>
+<p>支払名の欄を空にすると、よく使う支払名が下にチップで表示されます。
+タップすると自動入力され、そのまま金額欄へフォーカスが移ります。1文字以上入力すると候補が絞り込まれます。</p>
+<h3>「前回と同じ」クイック入力</h3>
+<p>支払名チップの右端にある <kbd>前回と同じ</kbd> ボタンを押すと、
+同じ支払名の直近の支出から<strong>金額・カテゴリ・支払者をまとめて補完</strong>します。
+コンタクトレンズ代・駐輪場代など、毎回ほぼ同じ金額の支出におすすめです。</p>
+        </section>
+        <section class="manual-section" id="edit">
+          <h2>記録した支出を直す・消す</h2>
+
+<ol class="steps">
+  <li>一覧で直したい行をタップすると編集画面が開きます。</li>
+  <li>削除したいときは、行を<strong>左にスワイプして「削除」</strong>、または編集画面下部の
+      「この支出を削除する」をタップします。削除は取り消せないため、確認ダイアログが表示されます。</li>
+  <li>確定/未確定の切り替えは、行を<strong>右にスワイプ</strong>するかダブルタップで行えます。</li>
+</ol>
+<div class="callout note">🔒マークが付いた支出は<strong>締め作業で確定（凍結）済み</strong>のため、編集・削除できません。
+直したい場合は、先にその月の締めを取り消してください（<a href="../settlement/index.html">月の締め作業と精算</a>参照）。</div>
+        </section>
+        <section class="manual-section" id="search">
+          <h2>探す・絞り込む</h2>
+
+<p>ホーム上部の検索バーに文字や数字を入れると、<strong>支払名・金額</strong>で明細を絞り込めます。
+さらに右側のフィルターボタンから、カテゴリを複数選んで絞り込むダイアログを開けます。
+このカテゴリ絞り込みは締め作業画面でも同じように使えます。</p>
+        </section>
+        <section class="manual-section" id="bulk">
+          <h2>まとめて操作する（複数選択モード）</h2>
+
+<p>一覧で複数選択モードに入ると、各行の左に <kbd>○</kbd> が表示され、複数の明細をまとめて操作できます。</p>
+<div class="table-wrap">
+<table>
+<tr><th>操作</th><th>内容</th></tr>
+<tr><td>カテゴリ設定</td><td>選択した明細に同じカテゴリを一括で適用します（一括カテゴリ設定ピッカーが開きます）</td></tr>
+<tr><td>確定</td><td>選択した明細をまとめて確定にします</td></tr>
+<tr><td>削除</td><td>選択した明細をまとめて削除します</td></tr>
+</table>
+</div>
+<div class="callout tip">CSVから大量に転送した直後など、「未分類のまま並んでいる明細を一気に振り分けたい」ときに便利です。</div>
+        </section>
+        <section class="manual-section" id="draft">
+          <h2>下書き（仮データ）を仕上げる</h2>
+
+<p>レシートOCRや決済アプリからの共有、固定費の「仮データ」で作られた明細は、
+<strong>確定前の下書き</strong>として登録されます。下書きは通常の支出一覧には表示されず、
+ホーム画面の<strong>下書きバッジ</strong>（未確定が1件以上あるときだけ表示）から開く一覧で管理します。</p>
+<div class="table-wrap">
+<table>
+<tr><th>バッジ</th><th>意味</th><th>やること</th></tr>
+<tr><td>仮</td><td>自動生成された未確認のデータ</td><td>内容を確認して保存すると確定データになります</td></tr>
+<tr><td>要確認</td><td>読み取りの精度が低かったデータ</td><td>金額・日付を手動で確認してから保存してください</td></tr>
+</table>
+</div>
+<ol class="steps">
+  <li>ホーム画面の下書きバッジ、または通知をタップして下書き一覧を開きます。</li>
+  <li>行をタップすると編集画面が開くので、足りない項目を補完します。</li>
+  <li><kbd>保存</kbd> すると確定データになり、通常の支出一覧に表示されます。</li>
+</ol>
+        </section>
+
+        <!-- Google AdSense 自動広告表示エリア（余白確保用プレースホルダー） -->
+        <div class="ad-placeholder">
+          <span class="ad-label">AD</span>
+          <p>この付近に Google AdSense 自動広告が表示される予定です。</p>
+        </div>
+
+        <nav class="page-nav">
+          <a class="page-nav-item prev" href="../getting-started/index.html"><span>← 前のページ</span><strong>🚀 はじめに・初期設定</strong></a>
+          <a class="page-nav-item next" href="../receipt/index.html"><span>次のページ →</span><strong>🧾 レシート・写真から取り込む</strong></a>
+        </nav>
+
+
+        <footer class="site-footer">© 2026 MyKakeibo 開発者</footer>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+</body>
+</html>

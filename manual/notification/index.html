@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>通知・お問い合わせ｜スマート家計簿 使い方マニュアル</title>
+  <meta name="description" content="通知の種類と設定、お知らせ一覧、チャットでのお問い合わせ、アプリ内FAQ。" />
+  <link rel="stylesheet" href="../../style.css" />
+</head>
+<body>
+  <div class="app-shell">
+
+    <div class="mobile-topbar">
+      <div class="brand"><span class="logo-icon">💰</span>スマート家計簿</div>
+      <button class="hamburger-btn" data-sidebar-toggle aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="sidebar-overlay" data-sidebar-overlay></div>
+
+    <aside class="sidebar" data-sidebar>
+      <div class="sidebar-brand"><span class="logo-icon">💰</span>スマート家計簿</div>
+      <ul class="nav-list">
+        <li><a class="nav-link" href="../../index.html"><span class="nav-icon">🏠</span>ホーム</a></li>
+        <li>
+          <a class="nav-link" href="../../manual/index.html"><span class="nav-icon">📖</span>使い方マニュアル</a>
+          <ul class="nav-sub-list">
+            <li><a class="nav-link" href="../../manual/getting-started/index.html"><span class="nav-icon">🚀</span>はじめに・初期設定</a></li>
+            <li><a class="nav-link" href="../../manual/transactions/index.html"><span class="nav-icon">✏️</span>支出を記録する</a></li>
+            <li><a class="nav-link" href="../../manual/receipt/index.html"><span class="nav-icon">🧾</span>レシート・写真から取り込む</a></li>
+            <li><a class="nav-link" href="../../manual/partner/index.html"><span class="nav-icon">👫</span>パートナーと共有する</a></li>
+            <li><a class="nav-link" href="../../manual/settlement/index.html"><span class="nav-icon">✅</span>月の締め作業と精算</a></li>
+            <li><a class="nav-link" href="../../manual/csv/index.html"><span class="nav-icon">📄</span>CSVインポート</a></li>
+            <li><a class="nav-link" href="../../manual/fixed-cost/index.html"><span class="nav-icon">🔁</span>固定費と登録提案</a></li>
+            <li><a class="nav-link" href="../../manual/budget/index.html"><span class="nav-icon">🎯</span>予算管理</a></li>
+            <li><a class="nav-link" href="../../manual/category/index.html"><span class="nav-icon">🗂️</span>カテゴリと自動分類</a></li>
+            <li><a class="nav-link" href="../../manual/report/index.html"><span class="nav-icon">📊</span>レポートを見る</a></li>
+            <li><a class="nav-link" href="../../manual/ai/index.html"><span class="nav-icon">✨</span>AIチャット</a></li>
+            <li><a class="nav-link is-active" href="../../manual/notification/index.html"><span class="nav-icon">🔔</span>通知・お問い合わせ</a></li>
+            <li><a class="nav-link" href="../../manual/premium/index.html"><span class="nav-icon">👑</span>プレミアム</a></li>
+          </ul>
+        </li>
+        <li><a class="nav-link" href="../../faq/index.html"><span class="nav-icon">💡</span>よくある質問（FAQ）</a></li>
+        <li>
+          <a class="nav-link" href="../../articles/index.html"><span class="nav-icon">💰</span>お役立ちマネー情報</a>
+          <ul class="nav-sub-list">
+            <li><a class="nav-link" href="../../articles/savings/index.html"><span class="nav-icon">⚡</span>節約術</a></li>
+            <li><a class="nav-link" href="../../articles/investment/index.html"><span class="nav-icon">📈</span>資産形成</a></li>
+            <li><a class="nav-link" href="../../articles/poikatsu/index.html"><span class="nav-icon">🪙</span>ポイ活</a></li>
+            <li><a class="nav-link" href="../../articles/efficiency/index.html"><span class="nav-icon">🚀</span>効率化</a></li>
+            <li><a class="nav-link" href="../../articles/goods/index.html"><span class="nav-icon">🛍️</span>グッズ</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="nav-divider"></div>
+      <ul class="nav-list">
+        <li><a class="nav-link" href="../../privacy-policy.html"><span class="nav-icon">📜</span>プライバシーポリシー</a></li>
+      </ul>
+    </aside>
+
+    <div class="main-content">
+      <div class="content-inner">
+
+        <div class="breadcrumb"><a href="../../index.html">ホーム</a> / <a href="../index.html">使い方マニュアル</a> / 通知・お問い合わせ</div>
+
+        <header class="page-header">
+          <span class="eyebrow">MANUAL / NOTIFICATION & SUPPORT</span>
+          <h1>🔔 通知・お問い合わせ</h1>
+          <p>通知の種類と設定、アプリ内のお知らせ一覧、そして運営への問い合わせ方法をまとめました。</p>
+        </header>
+
+        <nav class="manual-toc">
+          <div class="manual-toc-title">このページの内容</div>
+          <ul>
+            <li><a href="#settings">通知の設定</a></li>
+            <li><a href="#list">お知らせ一覧（ベルアイコン）</a></li>
+            <li><a href="#contact">お問い合わせ（チャット）</a></li>
+            <li><a href="#faq">アプリ内のよくあるご質問</a></li>
+          </ul>
+        </nav>
+
+        <section class="manual-section" id="settings">
+          <h2>通知の設定</h2>
+
+<p><kbd>⚙️ 設定</kbd> →「通知」で、次の4種類の通知を個別にON/OFFできます。</p>
+<div class="table-wrap">
+<table>
+<tr><th>通知</th><th>届くタイミング</th></tr>
+<tr><td>締め作業予定日の通知</td><td>毎月の締め作業実施日の <strong>9:00</strong> にプッシュ通知が届きます</td></tr>
+<tr><td>予算アラートの通知</td><td>予算の8割を超えたカテゴリがあったとき、その瞬間に通知します（同じ月・同じカテゴリは1回のみ）</td></tr>
+<tr><td>自動分類ルールの提案</td><td>アプリを開いたときに履歴を走査し、登録できそうな項目が3件以上見つかると通知します</td></tr>
+<tr><td>固定費の提案</td><td>同上。通知をタップすると、その場で登録できます</td></tr>
+</table>
+</div>
+<div class="callout note">通知が届かないときは、iPhoneの<strong>「設定 → 通知 → SmartKakeibo」</strong>で
+通知が許可されているかも確認してください。アプリ内のトグルがONでも、
+OS側で通知が許可されていないと届きません。</div>
+        </section>
+        <section class="manual-section" id="list">
+          <h2>お知らせ一覧（ベルアイコン）</h2>
+
+<p>ホーム画面右上の<strong>ベルアイコン</strong>をタップすると、お知らせ一覧が開きます。
+締め予定・予算超過・パートナー共有の解除など、これまでのお知らせ履歴を確認できます。
+一覧を閉じると未読バッジが消えます。</p>
+        </section>
+        <section class="manual-section" id="contact">
+          <h2>お問い合わせ（チャット）</h2>
+
+<p>ご意見・ご要望・不具合の報告は、<kbd>⚙️ 設定</kbd> →<strong>「お問い合わせ」</strong>の
+チャットからお気軽にご連絡ください。</p>
+<ol class="steps">
+  <li>「お問い合わせ」を開き、メッセージを入力して送信します。</li>
+  <li>運営からの返信は<strong>同じチャット画面に届きます</strong>。返信が届くとこの画面に表示されます。</li>
+</ol>
+<p>いただいたご意見は今後のアップデートの参考にさせていただきます。</p>
+        </section>
+        <section class="manual-section" id="faq">
+          <h2>アプリ内のよくあるご質問</h2>
+
+<p><kbd>⚙️ 設定</kbd> →「よくあるご質問」には、カテゴリ別のFAQが用意されています。
+このサイトの<a href="../../faq/index.html">よくある質問（FAQ）</a>もあわせてご覧ください。</p>
+<div class="callout tip">アプリが正常に動かない・フリーズする場合は、
+まずアプリを完全に終了して再起動をお試しください。
+改善しない場合は端末のOSを最新版に更新のうえ、それでも解決しないときはお問い合わせからご連絡ください。</div>
+        </section>
+
+        <!-- Google AdSense 自動広告表示エリア（余白確保用プレースホルダー） -->
+        <div class="ad-placeholder">
+          <span class="ad-label">AD</span>
+          <p>この付近に Google AdSense 自動広告が表示される予定です。</p>
+        </div>
+
+        <nav class="page-nav">
+          <a class="page-nav-item prev" href="../ai/index.html"><span>← 前のページ</span><strong>✨ AIチャット</strong></a>
+          <a class="page-nav-item next" href="../premium/index.html"><span>次のページ →</span><strong>👑 プレミアム</strong></a>
+        </nav>
+
+
+        <footer class="site-footer">© 2026 MyKakeibo 開発者</footer>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+</body>
+</html>

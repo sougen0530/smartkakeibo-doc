@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>レシート・写真から取り込む｜スマート家計簿 使い方マニュアル</title>
+  <meta name="description" content="レシートのOCR読み取り、写真管理タブ、PayPayなど決済アプリからの共有取り込み。" />
+  <link rel="stylesheet" href="../../style.css" />
+</head>
+<body>
+  <div class="app-shell">
+
+    <div class="mobile-topbar">
+      <div class="brand"><span class="logo-icon">💰</span>スマート家計簿</div>
+      <button class="hamburger-btn" data-sidebar-toggle aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="sidebar-overlay" data-sidebar-overlay></div>
+
+    <aside class="sidebar" data-sidebar>
+      <div class="sidebar-brand"><span class="logo-icon">💰</span>スマート家計簿</div>
+      <ul class="nav-list">
+        <li><a class="nav-link" href="../../index.html"><span class="nav-icon">🏠</span>ホーム</a></li>
+        <li>
+          <a class="nav-link" href="../../manual/index.html"><span class="nav-icon">📖</span>使い方マニュアル</a>
+          <ul class="nav-sub-list">
+            <li><a class="nav-link" href="../../manual/getting-started/index.html"><span class="nav-icon">🚀</span>はじめに・初期設定</a></li>
+            <li><a class="nav-link" href="../../manual/transactions/index.html"><span class="nav-icon">✏️</span>支出を記録する</a></li>
+            <li><a class="nav-link is-active" href="../../manual/receipt/index.html"><span class="nav-icon">🧾</span>レシート・写真から取り込む</a></li>
+            <li><a class="nav-link" href="../../manual/partner/index.html"><span class="nav-icon">👫</span>パートナーと共有する</a></li>
+            <li><a class="nav-link" href="../../manual/settlement/index.html"><span class="nav-icon">✅</span>月の締め作業と精算</a></li>
+            <li><a class="nav-link" href="../../manual/csv/index.html"><span class="nav-icon">📄</span>CSVインポート</a></li>
+            <li><a class="nav-link" href="../../manual/fixed-cost/index.html"><span class="nav-icon">🔁</span>固定費と登録提案</a></li>
+            <li><a class="nav-link" href="../../manual/budget/index.html"><span class="nav-icon">🎯</span>予算管理</a></li>
+            <li><a class="nav-link" href="../../manual/category/index.html"><span class="nav-icon">🗂️</span>カテゴリと自動分類</a></li>
+            <li><a class="nav-link" href="../../manual/report/index.html"><span class="nav-icon">📊</span>レポートを見る</a></li>
+            <li><a class="nav-link" href="../../manual/ai/index.html"><span class="nav-icon">✨</span>AIチャット</a></li>
+            <li><a class="nav-link" href="../../manual/notification/index.html"><span class="nav-icon">🔔</span>通知・お問い合わせ</a></li>
+            <li><a class="nav-link" href="../../manual/premium/index.html"><span class="nav-icon">👑</span>プレミアム</a></li>
+          </ul>
+        </li>
+        <li><a class="nav-link" href="../../faq/index.html"><span class="nav-icon">💡</span>よくある質問（FAQ）</a></li>
+        <li>
+          <a class="nav-link" href="../../articles/index.html"><span class="nav-icon">💰</span>お役立ちマネー情報</a>
+          <ul class="nav-sub-list">
+            <li><a class="nav-link" href="../../articles/savings/index.html"><span class="nav-icon">⚡</span>節約術</a></li>
+            <li><a class="nav-link" href="../../articles/investment/index.html"><span class="nav-icon">📈</span>資産形成</a></li>
+            <li><a class="nav-link" href="../../articles/poikatsu/index.html"><span class="nav-icon">🪙</span>ポイ活</a></li>
+            <li><a class="nav-link" href="../../articles/efficiency/index.html"><span class="nav-icon">🚀</span>効率化</a></li>
+            <li><a class="nav-link" href="../../articles/goods/index.html"><span class="nav-icon">🛍️</span>グッズ</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="nav-divider"></div>
+      <ul class="nav-list">
+        <li><a class="nav-link" href="../../privacy-policy.html"><span class="nav-icon">📜</span>プライバシーポリシー</a></li>
+      </ul>
+    </aside>
+
+    <div class="main-content">
+      <div class="content-inner">
+
+        <div class="breadcrumb"><a href="../../index.html">ホーム</a> / <a href="../index.html">使い方マニュアル</a> / レシート・写真から取り込む</div>
+
+        <header class="page-header">
+          <span class="eyebrow">MANUAL / RECEIPT & PHOTO</span>
+          <h1>🧾 レシート・写真から取り込む</h1>
+          <p>レシートを撮るだけ、決済アプリの画面を共有するだけで家計簿に登録できます。読み取りの動作と、どこまで自動で入るかのルールを説明します。</p>
+        </header>
+
+        <nav class="manual-toc">
+          <div class="manual-toc-title">このページの内容</div>
+          <ul>
+            <li><a href="#ocr">レシート写真から入力を補完する</a></li>
+            <li><a href="#settings">写真・レシート取込設定</a></li>
+            <li><a href="#photo-tab">写真管理タブでレシートを見返す</a></li>
+            <li><a href="#share-sheet">PayPay など決済アプリの画面から取り込む</a></li>
+          </ul>
+        </nav>
+
+        <section class="manual-section" id="ocr">
+          <h2>レシート写真から入力を補完する</h2>
+
+<ol class="steps">
+  <li>支出追加画面で <kbd>カメラ</kbd> または <kbd>写真から選択</kbd> をタップします。</li>
+  <li><strong>「OCR 自動実行」がON</strong>なら、そのまま読み取りが始まります。OFFなら画像の下の
+      <kbd>レシートを解析</kbd> をタップします。</li>
+  <li>読み取り結果を確認してから <kbd>保存</kbd> します。</li>
+</ol>
+<h3>すでに入力した内容は上書きされません</h3>
+<p>読み取り結果が入るのは<strong>「空の支払名」「空の金額」「まだ変更していない初期日付」</strong>だけです。</p>
+<ul class="checklist">
+  <li><span class="check-icon">✓</span><div>先に入力した支払名・金額・変更済みの日付は、レシート解析で上書きされません。</div></li>
+  <li><span class="check-icon">✓</span><div>「前回と同じ」などで補完した値も保持されます。</div></li>
+  <li><span class="check-icon">✓</span><div>入力後に空へ戻した欄は、空のまま保たれます。</div></li>
+  <li><span class="check-icon">✓</span><div>保持された項目があるときは「入力済みの○○は保持しました。」と表示されます。</div></li>
+</ul>
+<h3>カテゴリの自動判定</h3>
+<p>自動で付いたカテゴリは、レシートを再解析したときや支払名・メモを変えたときに見直され、
+候補が無ければ「未分類」に戻ります。一方、<strong>自分で選んだカテゴリ（「未分類」を含む）、
+「前回と同じ」で入れたカテゴリ、保存済みの支出を編集中のカテゴリは変更されません</strong>。</p>
+        </section>
+        <section class="manual-section" id="settings">
+          <h2>写真・レシート取込設定</h2>
+
+<p><kbd>⚙️ 設定</kbd> →「写真・レシート取込設定」で、取り込みの動作を4項目でコントロールできます。</p>
+<div class="table-wrap">
+<table>
+<tr><th>設定</th><th>ONにすると</th></tr>
+<tr><td>写真管理</td><td>レシート画像を端末に保存し、<strong>「写真管理」タブ</strong>が表示されます。OFFのときは画像を保存せず、OCRの結果だけを反映します（支出追加画面にも注意書きが出ます）</td></tr>
+<tr><td>自動下書き作成</td><td>取り込んだ内容を自動で下書きとして登録します。写真管理がOFFのときは常にONで固定されます</td></tr>
+<tr><td>取込時のカテゴリ自動判定</td><td>過去の同じ店舗の履歴やカテゴリ自動分類ルールから、カテゴリを自動で設定します（無料でも利用できます。自動分類ルールの照合は無料で上位2件、プレミアムで全件）</td></tr>
+<tr><td>OCR 自動実行</td><td>画像を選んだ時点で自動的に読み取りを開始します。OFFのときは <kbd>レシートを解析</kbd> を押したときだけ読み取ります</td></tr>
+</table>
+</div>
+<div class="callout note">「写真管理」をONにすると、iPhoneの写真アプリとアプリ内の両方に画像が残る形になります。
+二重管理になる点をご了承のうえご利用ください。</div>
+        </section>
+        <section class="manual-section" id="photo-tab">
+          <h2>写真管理タブでレシートを見返す</h2>
+
+<p>「写真管理」をONにすると、下部に<strong>写真管理タブ</strong>が追加されます。
+レシート画像が付いた明細をサムネイルのグリッドで一覧できます。</p>
+<ul class="checklist">
+  <li><span class="check-icon">✓</span><div>保存日時順／支払日順の並び替え、月別のグループ化に対応しています。</div></li>
+  <li><span class="check-icon">✓</span><div><strong>2本指のピンチ</strong>でサムネイルの大きさを変えられます。</div></li>
+  <li><span class="check-icon">✓</span><div>サムネイルをタップすると画像を拡大した詳細画面が開き、「編集」から明細の編集画面に進めます。</div></li>
+</ul>
+        </section>
+        <section class="manual-section" id="share-sheet">
+          <h2>PayPay など決済アプリの画面から取り込む</h2>
+
+<p>決済アプリの支払い詳細画面を共有するだけで、金額・店舗名・日付を自動で読み取り、
+下書きとして家計簿に登録できます。</p>
+<ol class="steps">
+  <li>PayPayアプリで支払い詳細（支払い完了画面）を開き、<strong>「共有」</strong>をタップします。</li>
+  <li>共有シートで <strong>「スマート家計簿」</strong> を選びます。</li>
+  <li>支払い画面の画像が自動で読み取られ、<strong>下書き</strong>として家計簿に登録されます
+      （共有されるテキストは保存されません）。</li>
+  <li>ホーム画面の下書きバッジ、または通知をタップして内容を確認・補完してから保存してください。</li>
+</ol>
+<div class="callout tip"><strong>共有シートで見つけやすくする</strong>：共有シートのアプリ一覧を右端までスクロールして
+「その他」をタップ → 右上の「編集」から「スマート家計簿」をお気に入りに追加して上位へ並べ替えておくと、
+次回からワンタップで選べます。</div>
+        </section>
+
+        <!-- Google AdSense 自動広告表示エリア（余白確保用プレースホルダー） -->
+        <div class="ad-placeholder">
+          <span class="ad-label">AD</span>
+          <p>この付近に Google AdSense 自動広告が表示される予定です。</p>
+        </div>
+
+        <nav class="page-nav">
+          <a class="page-nav-item prev" href="../transactions/index.html"><span>← 前のページ</span><strong>✏️ 支出を記録する</strong></a>
+          <a class="page-nav-item next" href="../partner/index.html"><span>次のページ →</span><strong>👫 パートナーと共有する</strong></a>
+        </nav>
+
+
+        <footer class="site-footer">© 2026 MyKakeibo 開発者</footer>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+</body>
+</html>

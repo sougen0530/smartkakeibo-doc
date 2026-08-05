@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSVインポート｜スマート家計簿 使い方マニュアル</title>
+  <meta name="description" content="クレジットカード明細の取り込み、Amazon注文履歴との突合、支出への転送。" />
+  <link rel="stylesheet" href="../../style.css" />
+</head>
+<body>
+  <div class="app-shell">
+
+    <div class="mobile-topbar">
+      <div class="brand"><span class="logo-icon">💰</span>スマート家計簿</div>
+      <button class="hamburger-btn" data-sidebar-toggle aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="sidebar-overlay" data-sidebar-overlay></div>
+
+    <aside class="sidebar" data-sidebar>
+      <div class="sidebar-brand"><span class="logo-icon">💰</span>スマート家計簿</div>
+      <ul class="nav-list">
+        <li><a class="nav-link" href="../../index.html"><span class="nav-icon">🏠</span>ホーム</a></li>
+        <li>
+          <a class="nav-link" href="../../manual/index.html"><span class="nav-icon">📖</span>使い方マニュアル</a>
+          <ul class="nav-sub-list">
+            <li><a class="nav-link" href="../../manual/getting-started/index.html"><span class="nav-icon">🚀</span>はじめに・初期設定</a></li>
+            <li><a class="nav-link" href="../../manual/transactions/index.html"><span class="nav-icon">✏️</span>支出を記録する</a></li>
+            <li><a class="nav-link" href="../../manual/receipt/index.html"><span class="nav-icon">🧾</span>レシート・写真から取り込む</a></li>
+            <li><a class="nav-link" href="../../manual/partner/index.html"><span class="nav-icon">👫</span>パートナーと共有する</a></li>
+            <li><a class="nav-link" href="../../manual/settlement/index.html"><span class="nav-icon">✅</span>月の締め作業と精算</a></li>
+            <li><a class="nav-link is-active" href="../../manual/csv/index.html"><span class="nav-icon">📄</span>CSVインポート</a></li>
+            <li><a class="nav-link" href="../../manual/fixed-cost/index.html"><span class="nav-icon">🔁</span>固定費と登録提案</a></li>
+            <li><a class="nav-link" href="../../manual/budget/index.html"><span class="nav-icon">🎯</span>予算管理</a></li>
+            <li><a class="nav-link" href="../../manual/category/index.html"><span class="nav-icon">🗂️</span>カテゴリと自動分類</a></li>
+            <li><a class="nav-link" href="../../manual/report/index.html"><span class="nav-icon">📊</span>レポートを見る</a></li>
+            <li><a class="nav-link" href="../../manual/ai/index.html"><span class="nav-icon">✨</span>AIチャット</a></li>
+            <li><a class="nav-link" href="../../manual/notification/index.html"><span class="nav-icon">🔔</span>通知・お問い合わせ</a></li>
+            <li><a class="nav-link" href="../../manual/premium/index.html"><span class="nav-icon">👑</span>プレミアム</a></li>
+          </ul>
+        </li>
+        <li><a class="nav-link" href="../../faq/index.html"><span class="nav-icon">💡</span>よくある質問（FAQ）</a></li>
+        <li>
+          <a class="nav-link" href="../../articles/index.html"><span class="nav-icon">💰</span>お役立ちマネー情報</a>
+          <ul class="nav-sub-list">
+            <li><a class="nav-link" href="../../articles/savings/index.html"><span class="nav-icon">⚡</span>節約術</a></li>
+            <li><a class="nav-link" href="../../articles/investment/index.html"><span class="nav-icon">📈</span>資産形成</a></li>
+            <li><a class="nav-link" href="../../articles/poikatsu/index.html"><span class="nav-icon">🪙</span>ポイ活</a></li>
+            <li><a class="nav-link" href="../../articles/efficiency/index.html"><span class="nav-icon">🚀</span>効率化</a></li>
+            <li><a class="nav-link" href="../../articles/goods/index.html"><span class="nav-icon">🛍️</span>グッズ</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="nav-divider"></div>
+      <ul class="nav-list">
+        <li><a class="nav-link" href="../../privacy-policy.html"><span class="nav-icon">📜</span>プライバシーポリシー</a></li>
+      </ul>
+    </aside>
+
+    <div class="main-content">
+      <div class="content-inner">
+
+        <div class="breadcrumb"><a href="../../index.html">ホーム</a> / <a href="../index.html">使い方マニュアル</a> / CSVインポート</div>
+
+        <header class="page-header">
+          <span class="eyebrow">MANUAL / CSV IMPORT</span>
+          <h1>📄 CSVインポート</h1>
+          <p>クレジットカードの利用明細CSVを取り込んで、まとめて家計簿に反映できます。Amazonの注文履歴と突合すると、「AMAZON.CO.JP」としか出ない明細を実際の商品名に書き換えられます。</p>
+        </header>
+
+        <nav class="manual-toc">
+          <div class="manual-toc-title">このページの内容</div>
+          <ul>
+            <li><a href="#overview">できること</a></li>
+            <li><a href="#format">CSVフォーマットを登録する</a></li>
+            <li><a href="#import">CSVを取り込む</a></li>
+            <li><a href="#match">Amazon明細と突合する</a></li>
+            <li><a href="#transfer">支出へ転送する</a></li>
+          </ul>
+        </nav>
+
+        <section class="manual-section" id="overview">
+          <h2>できること</h2>
+
+<p>楽天カード・PayPayカードの明細と、Amazonの注文履歴CSVを取り込んでおくと、
+「AMAZON.CO.JP」としか出ない買い物についても<strong>どのAmazon注文に対応するかを自動で見つけ、
+明細名を実際に買った商品名に書き換えて</strong>から家計簿に登録できます。</p>
+<p>あらかじめ <kbd>⚙️ 設定</kbd> →「CSVフォーマット」で、楽天カード・PayPay以外のカード・銀行の
+フォーマットを登録しておくこともできます。</p>
+<div class="callout note"><strong>取り込みは無料で何度でも、支出への転送は無料プランだと2ファイルまで。</strong>
+CSVを取り込んでおくだけなら、無料プランでも回数の制限なく何度でも行えます。
+制限があるのは、取り込んだ内容を「支出へ転送」して家計簿に反映する操作の方で、
+<strong>無料プランでは移行用に最初の2ファイル分までしか転送できません</strong>。
+残り枠は設定メニューの「CSVインポート」行に「転送 残りN/2」として表示されます。</div>
+        </section>
+        <section class="manual-section" id="format">
+          <h2>CSVフォーマットを登録する</h2>
+
+<p><kbd>⚙️ 設定</kbd> →「CSVフォーマット」は、便利な機能セクションから直接開けます。
+標準の楽天カード／PayPayカードのフォーマットに加えて、お使いのカード・銀行のフォーマットを登録できます。</p>
+<p>フォーマットでは、支払区分（共通支払/個人支払）・代理入力・負担割合・カテゴリを、項目ごとに
+次の4通りから選べます。CSV列は<strong>1始まりの列番号</strong>で指定します。</p>
+<div class="table-wrap">
+<table>
+<tr><th>入力方法</th><th>内容</th></tr>
+<tr><td>転送時に入力</td><td>支出へ転送するときの確認画面で入力します</td></tr>
+<tr><td>CSV列から取得</td><td>指定した列番号の値を使います</td></tr>
+<tr><td>固定値</td><td>あらかじめ決めた値を常に使います</td></tr>
+<tr><td>非表示（アプリ設定を使用）</td><td>項目を表示せず、アプリの既定設定に従います</td></tr>
+</table>
+</div>
+<p>カテゴリ列の名前で分類したい場合は<strong>「カテゴリ名一致で自動分類」</strong>をONにします。</p>
+<div class="callout tip"><strong>CSV列で使える値</strong>：支払区分は「共通支払」「個人支払」、
+代理入力は <code>true/false</code>・<code>1/0</code>・<code>on/off</code>・「はい/いいえ」、
+負担割合は <code>50</code>・<code>50%</code>・<code>0.5</code> のように指定します（いずれも50%）。
+カテゴリは前後の空白を除いた名前を使います。任意列が足りない・値が不正・割合が範囲外の場合も行は取り込まれ、
+その項目だけアプリ設定へ戻ります。</div>
+<div class="callout tip"><strong>カテゴリ名一致</strong>：前後空白を除いた文字列が、
+明細の収入/支出に使える有効カテゴリ1件と完全一致したときだけ優先します。
+同名重複・無効・収支不一致・不存在の場合は、従来の自動分類ルールとカテゴリ提案へ戻ります。</div>
+<div class="callout note">共有を使わない場合は支払区分・代理入力・負担割合が表示されません。
+個人支出管理や精算割合の設定で変更できない項目も編集できなくなります。
+標準フォーマット（楽天／PayPay）は削除できず、名称も変更できません。</div>
+        </section>
+        <section class="manual-section" id="import">
+          <h2>CSVを取り込む</h2>
+
+<ol class="steps">
+  <li>楽天カードの利用明細CSV（<code>enavi…csv</code>）、PayPayカードの利用明細CSV、
+      Amazonの注文履歴CSV（<code>order_…csv</code>）のうち、使うものをダウンロードします。</li>
+  <li><kbd>⚙️ 設定</kbd> →「CSVインポート」を開きます。</li>
+  <li>画面上部の「CSVフォーマット選択」で取り込みたいフォーマット
+      （楽天カード／PayPay／登録済みのカスタムフォーマット／末尾の「Amazon注文履歴」）を選び、
+      「このフォーマットで取込」を押して対応するファイルを選びます。必要な分だけ、順に取り込めばOKです。</li>
+  <li>1回の取り込みが<strong>1バッチ</strong>として記録され、ファイル名と取込日時が付きます。
+      バッチの行をタップすると、そのファイル分の明細だけを表示する詳細画面が開きます。</li>
+</ol>
+<p>取り込んだ明細は「クレカ明細 / Amazon明細」タブで一覧できます。
+クレカ明細タブでは各カードが混在表示され、カード種別バッジで見分けられます。</p>
+<div class="table-wrap">
+<table>
+<tr><th>種別</th><th>バッジ</th></tr>
+<tr><td>クレカ明細</td><td>未転送（灰）／転送済（緑）／重複のため保留（橙）</td></tr>
+<tr><td>Amazon明細</td><td>未突合／突合完了</td></tr>
+</table>
+</div>
+<div class="callout tip">同じファイルを2回取り込んでも大丈夫です。楽天/PayPayでは利用日・金額・名称・カード種別、
+汎用CSVではさらに収入/支出、Amazonでは注文番号・商品名・金額・注文日がすべて一致する行を自動でスキップします。
+文字コード（楽天/PayPayは主にUTF-8、Amazonは主にShift-JIS）も自動判別します。</div>
+        </section>
+        <section class="manual-section" id="match">
+          <h2>Amazon明細と突合する</h2>
+
+<p>「CSVフォーマット選択」で<strong>「Amazon注文履歴」を選び、かつAmazon明細を取り込み済み</strong>のときだけ、
+<kbd>Amazon明細と突合</kbd> ボタンが表示されます。</p>
+<p>押すと、名称に「Amazon」または「アマゾン」を含むクレジットカード明細を対象に、
+Amazonの注文（複数商品をまとめた<strong>注文単位</strong>）ごとの合計金額が完全一致し、
+日付が近い（注文日からおよそ2か月以内）クレジットカード明細と自動で紐付けます。
+楽天・PayPay・カスタムフォーマット、どの明細でも突合できます。</p>
+<ul class="checklist">
+  <li><span class="check-icon">✓</span><div>突合が成立すると、クレジットカード明細の名称がAmazonの商品名
+      （複数点あれば「商品名 他N点」）に書き換わります。</div></li>
+  <li><span class="check-icon">✓</span><div>突合済みのAmazon明細をタップすると、紐づいたクレカ明細をその場で確認できます。</div></li>
+</ul>
+<div class="callout tip">突合は「金額がぴったり一致するクレカ明細」のうち「日付が最も近いもの」を1件選ぶ方式です。
+クレカの請求はAmazonの注文日から数日〜十数日遅れて確定することが多いですが、日付が多少離れていても突合できます。</div>
+        </section>
+        <section class="manual-section" id="transfer">
+          <h2>支出へ転送する</h2>
+
+<ol class="steps">
+  <li>一覧またはバッチ詳細画面で <kbd>支出へ転送</kbd> を押します。</li>
+  <li>「転送時に入力」の項目だけ編集でき、CSV列や固定値から決まる項目は変更できない表示になります。
+      全明細で「非表示」の項目は確認画面に出ません。</li>
+  <li>転送後は、通常の支出と同じように編集できます。</li>
+</ol>
+<p>既存明細と重複した場合は<strong>「重複のため保留」</strong>となります。
+別明細だと確認できた場合だけ、詳細から1件を「重複でも転送」できます。</p>
+<div class="callout note"><strong>無料プランの転送枠について。</strong>
+無料プランで転送できるのは<strong>移行用の2ファイル分まで</strong>です（3ファイル目以降は転送ボタンを押すと
+プレミアムのご案内が表示されます）。同じファイル（バッチ）に対して「支出へ転送」を後からもう一度押したり、
+重複と判定された明細を個別に「重複でも転送」したりしても、<strong>同じファイルへの追加の転送は枠を消費しません</strong>。
+ただし、<strong>一度使った転送の枠は元に戻りません。</strong>プレミアムに登録してから解約しても、
+それまでに使った枠が復活することはないのでご注意ください。</div>
+<div class="callout tip">転送時のカテゴリ自動分類は、無料プランでは自動分類ルールの上位2件だけを適用します
+（スコアリング自動分類・位置情報による判定は行いません）。プレミアムではすべてのルールが適用されます。</div>
+        </section>
+
+        <!-- Google AdSense 自動広告表示エリア（余白確保用プレースホルダー） -->
+        <div class="ad-placeholder">
+          <span class="ad-label">AD</span>
+          <p>この付近に Google AdSense 自動広告が表示される予定です。</p>
+        </div>
+
+        <nav class="page-nav">
+          <a class="page-nav-item prev" href="../settlement/index.html"><span>← 前のページ</span><strong>✅ 月の締め作業と精算</strong></a>
+          <a class="page-nav-item next" href="../fixed-cost/index.html"><span>次のページ →</span><strong>🔁 固定費と登録提案</strong></a>
+        </nav>
+
+
+        <footer class="site-footer">© 2026 MyKakeibo 開発者</footer>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+</body>
+</html>

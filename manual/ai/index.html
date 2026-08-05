@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AIチャット｜スマート家計簿 使い方マニュアル</title>
+  <meta name="description" content="オンデバイスAIチャットの有効化、コンテキスト設定、データ添付と音声入力。" />
+  <link rel="stylesheet" href="../../style.css" />
+</head>
+<body>
+  <div class="app-shell">
+
+    <div class="mobile-topbar">
+      <div class="brand"><span class="logo-icon">💰</span>スマート家計簿</div>
+      <button class="hamburger-btn" data-sidebar-toggle aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="sidebar-overlay" data-sidebar-overlay></div>
+
+    <aside class="sidebar" data-sidebar>
+      <div class="sidebar-brand"><span class="logo-icon">💰</span>スマート家計簿</div>
+      <ul class="nav-list">
+        <li><a class="nav-link" href="../../index.html"><span class="nav-icon">🏠</span>ホーム</a></li>
+        <li>
+          <a class="nav-link" href="../../manual/index.html"><span class="nav-icon">📖</span>使い方マニュアル</a>
+          <ul class="nav-sub-list">
+            <li><a class="nav-link" href="../../manual/getting-started/index.html"><span class="nav-icon">🚀</span>はじめに・初期設定</a></li>
+            <li><a class="nav-link" href="../../manual/transactions/index.html"><span class="nav-icon">✏️</span>支出を記録する</a></li>
+            <li><a class="nav-link" href="../../manual/receipt/index.html"><span class="nav-icon">🧾</span>レシート・写真から取り込む</a></li>
+            <li><a class="nav-link" href="../../manual/partner/index.html"><span class="nav-icon">👫</span>パートナーと共有する</a></li>
+            <li><a class="nav-link" href="../../manual/settlement/index.html"><span class="nav-icon">✅</span>月の締め作業と精算</a></li>
+            <li><a class="nav-link" href="../../manual/csv/index.html"><span class="nav-icon">📄</span>CSVインポート</a></li>
+            <li><a class="nav-link" href="../../manual/fixed-cost/index.html"><span class="nav-icon">🔁</span>固定費と登録提案</a></li>
+            <li><a class="nav-link" href="../../manual/budget/index.html"><span class="nav-icon">🎯</span>予算管理</a></li>
+            <li><a class="nav-link" href="../../manual/category/index.html"><span class="nav-icon">🗂️</span>カテゴリと自動分類</a></li>
+            <li><a class="nav-link" href="../../manual/report/index.html"><span class="nav-icon">📊</span>レポートを見る</a></li>
+            <li><a class="nav-link is-active" href="../../manual/ai/index.html"><span class="nav-icon">✨</span>AIチャット</a></li>
+            <li><a class="nav-link" href="../../manual/notification/index.html"><span class="nav-icon">🔔</span>通知・お問い合わせ</a></li>
+            <li><a class="nav-link" href="../../manual/premium/index.html"><span class="nav-icon">👑</span>プレミアム</a></li>
+          </ul>
+        </li>
+        <li><a class="nav-link" href="../../faq/index.html"><span class="nav-icon">💡</span>よくある質問（FAQ）</a></li>
+        <li>
+          <a class="nav-link" href="../../articles/index.html"><span class="nav-icon">💰</span>お役立ちマネー情報</a>
+          <ul class="nav-sub-list">
+            <li><a class="nav-link" href="../../articles/savings/index.html"><span class="nav-icon">⚡</span>節約術</a></li>
+            <li><a class="nav-link" href="../../articles/investment/index.html"><span class="nav-icon">📈</span>資産形成</a></li>
+            <li><a class="nav-link" href="../../articles/poikatsu/index.html"><span class="nav-icon">🪙</span>ポイ活</a></li>
+            <li><a class="nav-link" href="../../articles/efficiency/index.html"><span class="nav-icon">🚀</span>効率化</a></li>
+            <li><a class="nav-link" href="../../articles/goods/index.html"><span class="nav-icon">🛍️</span>グッズ</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="nav-divider"></div>
+      <ul class="nav-list">
+        <li><a class="nav-link" href="../../privacy-policy.html"><span class="nav-icon">📜</span>プライバシーポリシー</a></li>
+      </ul>
+    </aside>
+
+    <div class="main-content">
+      <div class="content-inner">
+
+        <div class="breadcrumb"><a href="../../index.html">ホーム</a> / <a href="../index.html">使い方マニュアル</a> / AIチャット</div>
+
+        <header class="page-header">
+          <span class="eyebrow">MANUAL / AI CHAT</span>
+          <h1>✨ AIチャット</h1>
+          <p>対応端末では、家計データを外部に送らずに端末の中だけで動くAIチャットを使えます。既定ではOFFのベータ機能です。</p>
+        </header>
+
+        <nav class="manual-toc">
+          <div class="manual-toc-title">このページの内容</div>
+          <ul>
+            <li><a href="#enable">AIチャットを有効にする</a></li>
+            <li><a href="#context">AIに渡す情報を決める</a></li>
+            <li><a href="#use">AIチャットを使う</a></li>
+          </ul>
+        </nav>
+
+        <section class="manual-section" id="enable">
+          <h2>AIチャットを有効にする</h2>
+
+<p>AIチャットは Apple Intelligence（オンデバイスAI）を利用する機能です。
+<strong>対応端末でのみ表示され、既定はOFFのベータ機能</strong>です。</p>
+<ol class="steps">
+  <li><kbd>⚙️ 設定</kbd> →「AI設定」を開きます。</li>
+  <li><strong>「AIチャット」</strong>をONにします（対応端末でのみ表示されます）。</li>
+  <li>ONにすると、ホーム画面右上に ✨ アイコンが表示され、レポート画面には「AIでレポート分析」が追加されます。</li>
+</ol>
+<div class="callout note"><strong>家計データも音声も、外部のAIアプリ・外部サーバーへは送信されません。</strong>
+処理はすべて端末内で行われます。</div>
+        </section>
+        <section class="manual-section" id="context">
+          <h2>AIに渡す情報を決める</h2>
+
+<p>「AI設定」では、AIチャットに渡す情報の粒度を設定できます。</p>
+<div class="table-wrap">
+<table>
+<tr><th>設定</th><th>内容</th></tr>
+<tr><td>データの詳細度</td><td>どのくらい細かい情報をAIに渡すかを選びます</td></tr>
+<tr><td>店舗名／明細内容の含有</td><td>お店の名前や明細の内容を含めるかどうかを切り替えます</td></tr>
+<tr><td>予算比較の含有</td><td>予算との比較情報を含めるかどうかを切り替えます</td></tr>
+</table>
+</div>
+<div class="callout note">これらの設定は<strong>アプリ内AIチャット専用</strong>です。
+レポートの「外部AIへ共有」で使うテンプレートは、同じ「AI設定」画面の
+<strong>「共有コンテキスト」</strong>で別に管理します（こちらは無料で使えます）。</div>
+        </section>
+        <section class="manual-section" id="use">
+          <h2>AIチャットを使う</h2>
+
+<ul class="checklist">
+  <li><span class="check-icon">✓</span><div><strong>サイドバー</strong>：左からスライドインするサイドバーで、
+      検索・ピン留め・最近の会話・プロジェクト分類から過去のチャットを呼び出せます。
+      チャット履歴とプロジェクトは端末内に保存されます。</div></li>
+  <li><span class="check-icon">✓</span><div><strong>データ添付</strong>：＋ボタンから支払データを添付して質問できます。</div></li>
+  <li><span class="check-icon">✓</span><div><strong>音声入力</strong>：マイクボタンで日本語の音声入力ができます（端末内認識のみ）。</div></li>
+  <li><span class="check-icon">✓</span><div><strong>新規チャット</strong>：いつでも新しい会話を始められます。</div></li>
+</ul>
+<h3>レポートから分析する</h3>
+<p>レポート画面のメニューから「AIでレポート分析」を選ぶと、
+レポート画像を画面上に添付表示した状態でAIチャットが開きます。</p>
+<div class="callout note">画面上には画像が添付表示されますが、<strong>画像そのものはAIへ入力されません</strong>。
+AIが読むのは、AI設定で許可した範囲のテキスト情報です。</div>
+        </section>
+
+        <!-- Google AdSense 自動広告表示エリア（余白確保用プレースホルダー） -->
+        <div class="ad-placeholder">
+          <span class="ad-label">AD</span>
+          <p>この付近に Google AdSense 自動広告が表示される予定です。</p>
+        </div>
+
+        <nav class="page-nav">
+          <a class="page-nav-item prev" href="../report/index.html"><span>← 前のページ</span><strong>📊 レポートを見る</strong></a>
+          <a class="page-nav-item next" href="../notification/index.html"><span>次のページ →</span><strong>🔔 通知・お問い合わせ</strong></a>
+        </nav>
+
+
+        <footer class="site-footer">© 2026 MyKakeibo 開発者</footer>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>固定費と登録提案｜スマート家計簿 使い方マニュアル</title>
+  <meta name="description" content="家賃・サブスクの自動起票、周期と発生ルール、登録提案からのワンタップ登録。" />
+  <link rel="stylesheet" href="../../style.css" />
+</head>
+<body>
+  <div class="app-shell">
+
+    <div class="mobile-topbar">
+      <div class="brand"><span class="logo-icon">💰</span>スマート家計簿</div>
+      <button class="hamburger-btn" data-sidebar-toggle aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="sidebar-overlay" data-sidebar-overlay></div>
+
+    <aside class="sidebar" data-sidebar>
+      <div class="sidebar-brand"><span class="logo-icon">💰</span>スマート家計簿</div>
+      <ul class="nav-list">
+        <li><a class="nav-link" href="../../index.html"><span class="nav-icon">🏠</span>ホーム</a></li>
+        <li>
+          <a class="nav-link" href="../../manual/index.html"><span class="nav-icon">📖</span>使い方マニュアル</a>
+          <ul class="nav-sub-list">
+            <li><a class="nav-link" href="../../manual/getting-started/index.html"><span class="nav-icon">🚀</span>はじめに・初期設定</a></li>
+            <li><a class="nav-link" href="../../manual/transactions/index.html"><span class="nav-icon">✏️</span>支出を記録する</a></li>
+            <li><a class="nav-link" href="../../manual/receipt/index.html"><span class="nav-icon">🧾</span>レシート・写真から取り込む</a></li>
+            <li><a class="nav-link" href="../../manual/partner/index.html"><span class="nav-icon">👫</span>パートナーと共有する</a></li>
+            <li><a class="nav-link" href="../../manual/settlement/index.html"><span class="nav-icon">✅</span>月の締め作業と精算</a></li>
+            <li><a class="nav-link" href="../../manual/csv/index.html"><span class="nav-icon">📄</span>CSVインポート</a></li>
+            <li><a class="nav-link is-active" href="../../manual/fixed-cost/index.html"><span class="nav-icon">🔁</span>固定費と登録提案</a></li>
+            <li><a class="nav-link" href="../../manual/budget/index.html"><span class="nav-icon">🎯</span>予算管理</a></li>
+            <li><a class="nav-link" href="../../manual/category/index.html"><span class="nav-icon">🗂️</span>カテゴリと自動分類</a></li>
+            <li><a class="nav-link" href="../../manual/report/index.html"><span class="nav-icon">📊</span>レポートを見る</a></li>
+            <li><a class="nav-link" href="../../manual/ai/index.html"><span class="nav-icon">✨</span>AIチャット</a></li>
+            <li><a class="nav-link" href="../../manual/notification/index.html"><span class="nav-icon">🔔</span>通知・お問い合わせ</a></li>
+            <li><a class="nav-link" href="../../manual/premium/index.html"><span class="nav-icon">👑</span>プレミアム</a></li>
+          </ul>
+        </li>
+        <li><a class="nav-link" href="../../faq/index.html"><span class="nav-icon">💡</span>よくある質問（FAQ）</a></li>
+        <li>
+          <a class="nav-link" href="../../articles/index.html"><span class="nav-icon">💰</span>お役立ちマネー情報</a>
+          <ul class="nav-sub-list">
+            <li><a class="nav-link" href="../../articles/savings/index.html"><span class="nav-icon">⚡</span>節約術</a></li>
+            <li><a class="nav-link" href="../../articles/investment/index.html"><span class="nav-icon">📈</span>資産形成</a></li>
+            <li><a class="nav-link" href="../../articles/poikatsu/index.html"><span class="nav-icon">🪙</span>ポイ活</a></li>
+            <li><a class="nav-link" href="../../articles/efficiency/index.html"><span class="nav-icon">🚀</span>効率化</a></li>
+            <li><a class="nav-link" href="../../articles/goods/index.html"><span class="nav-icon">🛍️</span>グッズ</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="nav-divider"></div>
+      <ul class="nav-list">
+        <li><a class="nav-link" href="../../privacy-policy.html"><span class="nav-icon">📜</span>プライバシーポリシー</a></li>
+      </ul>
+    </aside>
+
+    <div class="main-content">
+      <div class="content-inner">
+
+        <div class="breadcrumb"><a href="../../index.html">ホーム</a> / <a href="../index.html">使い方マニュアル</a> / 固定費と登録提案</div>
+
+        <header class="page-header">
+          <span class="eyebrow">MANUAL / FIXED COST</span>
+          <h1>🔁 固定費と登録提案</h1>
+          <p>家賃・サブスクなど毎月決まって発生する支払を登録しておくと、支払データを自動で作ったり、月額換算で管理したりできます。</p>
+        </header>
+
+        <nav class="manual-toc">
+          <div class="manual-toc-title">このページの内容</div>
+          <ul>
+            <li><a href="#add">固定費を登録する</a></li>
+            <li><a href="#rules">日付の決まりごと</a></li>
+            <li><a href="#suggestion">登録提案からワンタップで登録する</a></li>
+          </ul>
+        </nav>
+
+        <section class="manual-section" id="add">
+          <h2>固定費を登録する</h2>
+
+<ol class="steps">
+  <li><kbd>⚙️ 設定</kbd> →「固定費」を開き、右上の <kbd>＋</kbd> をタップします。</li>
+  <li>名前（例: 家賃）と金額を入力します。</li>
+  <li>「支払データ」で使い方を選びます。毎月の支払データも作る場合は<strong>「自動作成」</strong>、
+      クレジットカードCSVなどから実績を取り込むため固定費の金額・周期だけ管理したい場合は
+      <strong>「管理のみ」</strong>を選びます。</li>
+  <li>「自動作成」を選んだ場合は、作成する支払データを<strong>「確定データ」</strong>または
+      <strong>「仮データ」</strong>から選びます。電気・ガス代など金額が毎月変わるものは「仮データ」にすると、
+      あとから実際の金額へ変更して確定できます。</li>
+  <li>周期（毎月/毎年など）と発生ルール（例: 27日、第2金曜日）を設定します。</li>
+  <li>「特定の日」を選んだ場合は、発生日が土日のときの扱いを
+      「前倒し（→金曜）」「後ろ倒し（→月曜）」「そのまま」から選びます。</li>
+  <li>「初回対象日」で、いつの分から自動作成するかを選びます。
+      たとえば7月15日に毎月20日の固定費を登録するとき、6月開始なら6月20日・7月20日を、
+      7月開始なら7月20日から作成できます。未来の月を選んだ場合は、その月になるまで作成されません。</li>
+  <li>「登録内容プレビュー」で、確定/仮の作成方法と次回日を確認します。
+      「管理のみ」では「支払データは作成されません」と表示されます。</li>
+  <li><kbd>保存</kbd> すると、「自動作成」では初回対象日から現在までの未作成分が補完され、
+      以後もアプリを開いたタイミングで条件に該当する支払データが作られます。
+      「管理のみ」では支払データを作らず、固定費一覧や月額換算の管理だけに使われます。</li>
+</ol>
+<p>固定費一覧では、「自動作成 / 管理のみ」と、自動作成時の「仮データ」を行バッジで見分けられます。
+並べ替え・削除もこの画面で行えます。</p>
+        </section>
+        <section class="manual-section" id="rules">
+          <h2>日付の決まりごと</h2>
+
+<div class="callout tip">「仮データ」で作成された支払は<strong>下書き</strong>として表示されます。
+実際の請求額が分かったら支払を開き、金額を直して保存すると確定データになります。</div>
+<div class="callout tip"><strong>「31日」は「月末」とは異なります。</strong>
+4月や2月など31日がない月は、その月の固定費は作られません。平年の2月29日や、
+その月に存在しない第5月曜日なども同様です。月末への変更や翌月への繰り越しは行われず、
+プレビューにはその月を飛ばした次の有効な予定日が表示されます。</div>
+<div class="callout tip">前倒し/後ろ倒しは、指定した日がその月に存在する場合だけ行われます。
+その結果、実際の起票日が前月または翌月になることがあります。
+自動作成済み判定と複数月周期は、選んだ初回対象月を基準にし、実際の日付ではなく設定上の対象月で数えます。
+そのため初回対象月に指定日がなくても翌月へ周期がずれず、プレビューと自動作成が一致します。</div>
+<div class="callout note">あとから「自動作成」から「管理のみ」へ変えても、
+すでに作成された支払データは削除されません。また「確定データ / 仮データ」の変更は、
+変更後に新しく作られる支払にだけ反映されます。</div>
+        </section>
+        <section class="manual-section" id="suggestion">
+          <h2>登録提案からワンタップで登録する</h2>
+
+<p><kbd>⚙️ 設定</kbd> →「登録提案」では、これまでの取引履歴を走査して
+<strong>登録できそうな自動分類ルール・固定費の候補</strong>を提案します。プレミアム未加入でも利用できます。</p>
+<ul class="checklist">
+  <li><span class="check-icon">✓</span><div>固定費の候補には、<strong>作成モードと初回対象年月</strong>が表示されます。
+      候補になった明細がすべて手動入力なら「自動作成」、クレジットカードCSVなどから取り込んだ明細を
+      1件でも含むなら「管理のみ」が提案されます。</div></li>
+  <li><span class="check-icon">✓</span><div>初回対象は最後に確認された支払の次の周期になるため、
+      提案の根拠になった過去明細が固定費として重複作成されることはありません。</div></li>
+  <li><span class="check-icon">✓</span><div>行内のピッカーでカテゴリを確認・変更しながら、ワンタップで登録できます。</div></li>
+</ul>
+<div class="callout tip">アプリを開いたときに登録できそうな項目が3件以上見つかると、通知でお知らせします
+（<kbd>⚙️ 設定</kbd> →「通知」の「登録提案」セクションでON/OFFを切り替えられます）。
+通知をタップすると、その場で登録できます。</div>
+        </section>
+
+        <!-- Google AdSense 自動広告表示エリア（余白確保用プレースホルダー） -->
+        <div class="ad-placeholder">
+          <span class="ad-label">AD</span>
+          <p>この付近に Google AdSense 自動広告が表示される予定です。</p>
+        </div>
+
+        <nav class="page-nav">
+          <a class="page-nav-item prev" href="../csv/index.html"><span>← 前のページ</span><strong>📄 CSVインポート</strong></a>
+          <a class="page-nav-item next" href="../budget/index.html"><span>次のページ →</span><strong>🎯 予算管理</strong></a>
+        </nav>
+
+
+        <footer class="site-footer">© 2026 MyKakeibo 開発者</footer>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+</body>
+</html>

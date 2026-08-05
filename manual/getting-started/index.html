@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>はじめに・初期設定｜スマート家計簿 使い方マニュアル</title>
+  <meta name="description" content="初回起動時のデータ引き継ぎ、初期設定ウィザード、画面構成と設定メニューの全体像。" />
+  <link rel="stylesheet" href="../../style.css" />
+</head>
+<body>
+  <div class="app-shell">
+
+    <div class="mobile-topbar">
+      <div class="brand"><span class="logo-icon">💰</span>スマート家計簿</div>
+      <button class="hamburger-btn" data-sidebar-toggle aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="sidebar-overlay" data-sidebar-overlay></div>
+
+    <aside class="sidebar" data-sidebar>
+      <div class="sidebar-brand"><span class="logo-icon">💰</span>スマート家計簿</div>
+      <ul class="nav-list">
+        <li><a class="nav-link" href="../../index.html"><span class="nav-icon">🏠</span>ホーム</a></li>
+        <li>
+          <a class="nav-link" href="../../manual/index.html"><span class="nav-icon">📖</span>使い方マニュアル</a>
+          <ul class="nav-sub-list">
+            <li><a class="nav-link is-active" href="../../manual/getting-started/index.html"><span class="nav-icon">🚀</span>はじめに・初期設定</a></li>
+            <li><a class="nav-link" href="../../manual/transactions/index.html"><span class="nav-icon">✏️</span>支出を記録する</a></li>
+            <li><a class="nav-link" href="../../manual/receipt/index.html"><span class="nav-icon">🧾</span>レシート・写真から取り込む</a></li>
+            <li><a class="nav-link" href="../../manual/partner/index.html"><span class="nav-icon">👫</span>パートナーと共有する</a></li>
+            <li><a class="nav-link" href="../../manual/settlement/index.html"><span class="nav-icon">✅</span>月の締め作業と精算</a></li>
+            <li><a class="nav-link" href="../../manual/csv/index.html"><span class="nav-icon">📄</span>CSVインポート</a></li>
+            <li><a class="nav-link" href="../../manual/fixed-cost/index.html"><span class="nav-icon">🔁</span>固定費と登録提案</a></li>
+            <li><a class="nav-link" href="../../manual/budget/index.html"><span class="nav-icon">🎯</span>予算管理</a></li>
+            <li><a class="nav-link" href="../../manual/category/index.html"><span class="nav-icon">🗂️</span>カテゴリと自動分類</a></li>
+            <li><a class="nav-link" href="../../manual/report/index.html"><span class="nav-icon">📊</span>レポートを見る</a></li>
+            <li><a class="nav-link" href="../../manual/ai/index.html"><span class="nav-icon">✨</span>AIチャット</a></li>
+            <li><a class="nav-link" href="../../manual/notification/index.html"><span class="nav-icon">🔔</span>通知・お問い合わせ</a></li>
+            <li><a class="nav-link" href="../../manual/premium/index.html"><span class="nav-icon">👑</span>プレミアム</a></li>
+          </ul>
+        </li>
+        <li><a class="nav-link" href="../../faq/index.html"><span class="nav-icon">💡</span>よくある質問（FAQ）</a></li>
+        <li>
+          <a class="nav-link" href="../../articles/index.html"><span class="nav-icon">💰</span>お役立ちマネー情報</a>
+          <ul class="nav-sub-list">
+            <li><a class="nav-link" href="../../articles/savings/index.html"><span class="nav-icon">⚡</span>節約術</a></li>
+            <li><a class="nav-link" href="../../articles/investment/index.html"><span class="nav-icon">📈</span>資産形成</a></li>
+            <li><a class="nav-link" href="../../articles/poikatsu/index.html"><span class="nav-icon">🪙</span>ポイ活</a></li>
+            <li><a class="nav-link" href="../../articles/efficiency/index.html"><span class="nav-icon">🚀</span>効率化</a></li>
+            <li><a class="nav-link" href="../../articles/goods/index.html"><span class="nav-icon">🛍️</span>グッズ</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="nav-divider"></div>
+      <ul class="nav-list">
+        <li><a class="nav-link" href="../../privacy-policy.html"><span class="nav-icon">📜</span>プライバシーポリシー</a></li>
+      </ul>
+    </aside>
+
+    <div class="main-content">
+      <div class="content-inner">
+
+        <div class="breadcrumb"><a href="../../index.html">ホーム</a> / <a href="../index.html">使い方マニュアル</a> / はじめに・初期設定</div>
+
+        <header class="page-header">
+          <span class="eyebrow">MANUAL / GETTING STARTED</span>
+          <h1>🚀 はじめに・初期設定</h1>
+          <p>スマート家計簿をインストールして最初にやること、アプリ全体の画面構成、設定メニューの見取り図をまとめました。まずはこのページから読み進めてください。</p>
+        </header>
+
+        <nav class="manual-toc">
+          <div class="manual-toc-title">このページの内容</div>
+          <ul>
+            <li><a href="#about">スマート家計簿でできること</a></li>
+            <li><a href="#first-launch">初回起動：データを引き継ぐ／新しくはじめる</a></li>
+            <li><a href="#onboarding">初期設定ウィザード</a></li>
+            <li><a href="#screens">画面構成（タブ）</a></li>
+            <li><a href="#home">ホーム（支出一覧）画面の見かた</a></li>
+            <li><a href="#settings-map">設定メニューの見取り図</a></li>
+            <li><a href="#account">アカウント設定とアプリロック</a></li>
+          </ul>
+        </nav>
+
+        <section class="manual-section" id="about">
+          <h2>スマート家計簿でできること</h2>
+
+<p>スマート家計簿は、<strong>パートナーとの生活費の割り勘・精算</strong>を手軽にすることを軸にした家計簿アプリです。
+もちろん<strong>おひとりでの利用（共有OFF）</strong>にも対応していて、その場合は割り勘まわりの表示がすべて消え、
+シンプルな家計簿として動作します。</p>
+<ul class="checklist">
+  <li><span class="check-icon">✓</span><div><strong>毎日の記録</strong>：支出・入金の記録、レシート撮影からの自動入力、決済アプリの画面からの取り込み</div></li>
+  <li><span class="check-icon">✓</span><div><strong>割り勘と精算</strong>：支払ごとの負担割合、立替、月次の締め作業による精算金額の確定</div></li>
+  <li><span class="check-icon">✓</span><div><strong>自動化</strong>：固定費の自動起票、支払名からのカテゴリ自動分類、クレジットカードCSVの取り込み</div></li>
+  <li><span class="check-icon">✓</span><div><strong>振り返り</strong>：月次・年次レポート、カテゴリ別の予算対比、予算アラート通知</div></li>
+</ul>
+        </section>
+        <section class="manual-section" id="first-launch">
+          <h2>初回起動：データを引き継ぐ／新しくはじめる</h2>
+
+<p>アプリを本当に初めて起動したとき（未設定かつ端末にデータがないとき）、最初に
+<strong>「データ引き継ぎ」</strong>の画面が表示されます。</p>
+<ol class="steps">
+  <li><strong>他の端末から引き継ぐ</strong>を選ぶと、同じ Apple ID の iCloud に保存されている全データ
+      （設定・支払データ・レシート画像・カテゴリ）を取得して復元します。復元が終わると初期設定ウィザードは
+      すべてスキップされ、そのまま前の端末の続きから使えます。</li>
+  <li><strong>新しくはじめる</strong>を選ぶと、続けて初期設定ウィザードが開きます。
+      引き継ぎを試してクラウドにデータが無かった場合も、こちらへ進みます。</li>
+</ol>
+<div class="callout note"><strong>機種変更のときは</strong>：先に旧端末で
+「アカウント設定 → iCloudとデータを同期する」がONになっていることを確認してください。
+OFFのまま機種変更すると、データは旧端末の中だけに残ります。</div>
+        </section>
+        <section class="manual-section" id="onboarding">
+          <h2>初期設定ウィザード</h2>
+
+<p>「新しくはじめる」を選ぶと、次の順番でセットアップを案内します。
+<strong>各ステップはスキップでき、あとから設定画面でいつでも変更できます。</strong></p>
+<div class="table-wrap">
+<table>
+<tr><th>ステップ</th><th>内容</th></tr>
+<tr><td>1. ユーザー名</td><td>表示名を入力します。パートナーへの招待メッセージにも使われます</td></tr>
+<tr><td>2. 使い方の選択</td><td><strong>「ひとりで使う」／「パートナーを招待する」／「パートナーから招待されている」</strong>の3択。
+招待する場合は続けて招待リンクの作成と締め設定を、招待されている場合はリンクの貼り付け・QRコード読み取りでの参加を案内します</td></tr>
+<tr><td>3. カテゴリテンプレート</td><td>3種類のテンプレート（フラット／固定費・変動費／必須生活費・ゆとり費）から選んでカテゴリを一括生成します</td></tr>
+<tr><td>4. 共有するカテゴリを選ぶ</td><td>パートナー共有を選んだときだけ表示されます。どのカテゴリを共有するかをまとめてトグル選択します</td></tr>
+<tr><td>5. カテゴリの詳細修正</td><td>生成されたカテゴリの名前・アイコンなどを調整します</td></tr>
+<tr><td>6. 通知の許可</td><td>締め作業や予算アラートのプッシュ通知を受け取るかを選びます</td></tr>
+<tr><td>7. プレミアムのご案内</td><td>プレミアム機能の紹介です。ここで登録しなくても、あとから設定メニューで登録できます</td></tr>
+</table>
+</div>
+<div class="callout tip">招待リンクやQRコードから<strong>参加に成功した場合は、カテゴリテンプレート以降のステップが自動でスキップ</strong>されます。
+オーナー側のカテゴリ・予算・共有設定がそのまま取り込まれるため、自分で作り直す必要はありません。</div>
+        </section>
+        <section class="manual-section" id="screens">
+          <h2>画面構成（タブ）</h2>
+
+<p>画面下部のタブが基本の入口です。<strong>タブは設定によって増減します。</strong></p>
+<div class="table-wrap">
+<table>
+<tr><th>タブ</th><th>できること</th><th>表示条件</th></tr>
+<tr><td>📋 支出一覧</td><td>毎日の支出の記録と確認。月ごとの合計と未精算額もここに表示されます</td><td>常時</td></tr>
+<tr><td>✅ 締め作業</td><td>月に一度、データを確認して精算金額を確定します</td><td>パートナー共有と「共有データの締め作業をする」が<strong>両方ON</strong>のとき</td></tr>
+<tr><td>📊 レポート</td><td>月間・年間の支出をグラフで振り返ります</td><td>常時</td></tr>
+<tr><td>🖼️ 写真管理</td><td>レシート画像付きの明細をサムネイルで一覧します</td><td>「写真管理」設定がONのとき</td></tr>
+<tr><td>⚙️ 設定</td><td>各種設定へのハブメニュー（右端）</td><td>常時</td></tr>
+</table>
+</div>
+        </section>
+        <section class="manual-section" id="home">
+          <h2>ホーム（支出一覧）画面の見かた</h2>
+
+<p>ホーム画面の上部にはヘッダーカードがあり、<kbd>◀</kbd> <kbd>▶</kbd> で表示する年月を切り替えられます。
+カードをタップすると開閉でき、開いているときは金額サマリーと<strong>今月の未精算額</strong>（共有ON時）が表示されます。
+合計カードの近くには<strong>前月比</strong>（「先月より ¥3,200 増」など）も表示されます。</p>
+<div class="table-wrap">
+<table>
+<tr><th>場所</th><th>アイコン</th><th>できること</th></tr>
+<tr><td>検索バー</td><td>🔍</td><td>支払名・金額で明細を絞り込みます</td></tr>
+<tr><td>ヘッダー右</td><td>≡ フィルター</td><td>カテゴリで絞り込むダイアログを開きます</td></tr>
+<tr><td>ヘッダー右</td><td>🔔 ベル</td><td>お知らせ一覧（締め予定・予算超過など）を開きます</td></tr>
+<tr><td>ヘッダー右</td><td>✨ きらめき</td><td>AIチャットを開きます（対応端末で「AIチャット」をONにしたときのみ表示）</td></tr>
+<tr><td>ヘッダー右</td><td>📥 下書きバッジ</td><td>未確定の下書きが1件以上あるときだけ表示され、下書き一覧を開きます</td></tr>
+<tr><td>右下</td><td>＋</td><td>支出・入金を追加します</td></tr>
+</table>
+</div>
+<div class="callout note">予算超過・残額少なめのお知らせは、支出一覧の画面上には表示されません。
+プッシュ通知とお知らせ一覧（ベル）でのみお届けします。</div>
+        </section>
+        <section class="manual-section" id="settings-map">
+          <h2>設定メニューの見取り図</h2>
+
+<p>設定タブは4つのセクションに分かれています。各項目の詳しい使い方は、それぞれのマニュアルページを参照してください。</p>
+<div class="table-wrap">
+<table>
+<tr><th>セクション</th><th>項目</th><th>内容</th></tr>
+<tr><td rowspan="3">個人設定</td><td>アカウント設定</td><td>Apple ID（iCloud）でのログイン、顔認証ロック、表示名・アイコン、iCloud同期</td></tr>
+<tr><td>通知</td><td>締め作業予定日・予算アラート・登録提案の通知</td></tr>
+<tr><td>外観</td><td>テーマカラー（8色）の選択</td></tr>
+<tr><td rowspan="7">家計簿設定</td><td>カテゴリ設定</td><td>階層カテゴリの管理・テンプレート生成</td></tr>
+<tr><td>パートナー共有設定</td><td>共有のON/OFF、招待・ペアリング、負担割合、締め設定</td></tr>
+<tr><td>写真・レシート取込設定</td><td>写真管理、自動下書き作成、カテゴリ自動判定、OCR自動実行</td></tr>
+<tr><td>固定費</td><td>家賃・サブスクなど定期的な支払の管理</td></tr>
+<tr><td>予算管理</td><td>カテゴリ別の予算設定と履歴</td></tr>
+<tr><td>レポート設定</td><td>レポート画面の初期表示（集計基準・表示対象・カテゴリ表示）</td></tr>
+<tr><td>AI設定</td><td>AIチャットのON/OFF、外部AIへ共有するコンテキストの管理</td></tr>
+<tr><td rowspan="4">便利な機能</td><td>カテゴリ自動分類</td><td>支払名からカテゴリを自動で付けるルール</td></tr>
+<tr><td>登録提案</td><td>履歴から自動分類ルール・固定費の候補を提案</td></tr>
+<tr><td>CSVフォーマット</td><td>カード・銀行のCSV列レイアウトの登録</td></tr>
+<tr><td>CSVインポート</td><td>CSVの取り込みと支出への転送</td></tr>
+<tr><td rowspan="3">ヘルプ・情報</td><td>お問い合わせ</td><td>運営とのチャット</td></tr>
+<tr><td>よくあるご質問</td><td>アプリ内FAQ</td></tr>
+<tr><td>プライバシーポリシー／公式サイト</td><td>ブラウザで開きます</td></tr>
+</table>
+</div>
+<p>プレミアム未加入のときは「広告を解除」、加入済みのときは「プレミアム会員です」の行が表示され、
+タップすると会員情報画面が開きます。</p>
+        </section>
+        <section class="manual-section" id="account">
+          <h2>アカウント設定とアプリロック</h2>
+
+<h3>Apple ID（iCloud）でのログイン</h3>
+<p>ログインは<strong>任意</strong>です。未ログインでも家計簿機能はそのまま使えます。
+ログアウトしても家計簿データは端末に残ります（顔認証ロックは無効になります）。</p>
+<h3>顔認証ロック</h3>
+<p>ログイン中かつ端末が生体認証に対応している場合、<strong>「Face ID でロック」</strong>を有効にできます。
+ONにすると、アプリの起動時と前面に戻ったときにロック画面が全面に表示され、認証するまで中身が見えません。</p>
+<h3>iCloud同期（自分の端末どうし）</h3>
+<p>「iCloudとデータを同期する」をONにすると、<strong>同じ Apple ID の自分の端末どうしで、
+家計簿の全データ（設定・支払データ・レシート画像・カテゴリ）が同期</strong>されます。
+画面ではiCloudアカウントの状態・最終同期の時刻・前回の同期エラーを確認できます。</p>
+<div class="callout note">これは「自分の端末どうしの同期」です。<strong>パートナーとの共有はまったく別の仕組み</strong>で、
+「パートナー共有設定」から行います。詳しくは<a href="../partner/index.html">パートナーと共有する</a>をご覧ください。</div>
+<h3>外観（テーマカラー）</h3>
+<p>「外観」から8色のテーマカラーを選べます。ダークモードはiPhone本体の設定に追従します。</p>
+        </section>
+
+        <!-- Google AdSense 自動広告表示エリア（余白確保用プレースホルダー） -->
+        <div class="ad-placeholder">
+          <span class="ad-label">AD</span>
+          <p>この付近に Google AdSense 自動広告が表示される予定です。</p>
+        </div>
+
+        <nav class="page-nav">
+          <a class="page-nav-item prev" href="../index.html"><span>← 戻る</span><strong>📖 マニュアル目次</strong></a>
+          <a class="page-nav-item next" href="../transactions/index.html"><span>次のページ →</span><strong>✏️ 支出を記録する</strong></a>
+        </nav>
+
+
+        <footer class="site-footer">© 2026 MyKakeibo 開発者</footer>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+</body>
+</html>

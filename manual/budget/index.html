@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>予算管理｜スマート家計簿 使い方マニュアル</title>
+  <meta name="description" content="カテゴリ別の予算設定、まとめて設定、予算の履歴管理と予算アラート。" />
+  <link rel="stylesheet" href="../../style.css" />
+</head>
+<body>
+  <div class="app-shell">
+
+    <div class="mobile-topbar">
+      <div class="brand"><span class="logo-icon">💰</span>スマート家計簿</div>
+      <button class="hamburger-btn" data-sidebar-toggle aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="sidebar-overlay" data-sidebar-overlay></div>
+
+    <aside class="sidebar" data-sidebar>
+      <div class="sidebar-brand"><span class="logo-icon">💰</span>スマート家計簿</div>
+      <ul class="nav-list">
+        <li><a class="nav-link" href="../../index.html"><span class="nav-icon">🏠</span>ホーム</a></li>
+        <li>
+          <a class="nav-link" href="../../manual/index.html"><span class="nav-icon">📖</span>使い方マニュアル</a>
+          <ul class="nav-sub-list">
+            <li><a class="nav-link" href="../../manual/getting-started/index.html"><span class="nav-icon">🚀</span>はじめに・初期設定</a></li>
+            <li><a class="nav-link" href="../../manual/transactions/index.html"><span class="nav-icon">✏️</span>支出を記録する</a></li>
+            <li><a class="nav-link" href="../../manual/receipt/index.html"><span class="nav-icon">🧾</span>レシート・写真から取り込む</a></li>
+            <li><a class="nav-link" href="../../manual/partner/index.html"><span class="nav-icon">👫</span>パートナーと共有する</a></li>
+            <li><a class="nav-link" href="../../manual/settlement/index.html"><span class="nav-icon">✅</span>月の締め作業と精算</a></li>
+            <li><a class="nav-link" href="../../manual/csv/index.html"><span class="nav-icon">📄</span>CSVインポート</a></li>
+            <li><a class="nav-link" href="../../manual/fixed-cost/index.html"><span class="nav-icon">🔁</span>固定費と登録提案</a></li>
+            <li><a class="nav-link is-active" href="../../manual/budget/index.html"><span class="nav-icon">🎯</span>予算管理</a></li>
+            <li><a class="nav-link" href="../../manual/category/index.html"><span class="nav-icon">🗂️</span>カテゴリと自動分類</a></li>
+            <li><a class="nav-link" href="../../manual/report/index.html"><span class="nav-icon">📊</span>レポートを見る</a></li>
+            <li><a class="nav-link" href="../../manual/ai/index.html"><span class="nav-icon">✨</span>AIチャット</a></li>
+            <li><a class="nav-link" href="../../manual/notification/index.html"><span class="nav-icon">🔔</span>通知・お問い合わせ</a></li>
+            <li><a class="nav-link" href="../../manual/premium/index.html"><span class="nav-icon">👑</span>プレミアム</a></li>
+          </ul>
+        </li>
+        <li><a class="nav-link" href="../../faq/index.html"><span class="nav-icon">💡</span>よくある質問（FAQ）</a></li>
+        <li>
+          <a class="nav-link" href="../../articles/index.html"><span class="nav-icon">💰</span>お役立ちマネー情報</a>
+          <ul class="nav-sub-list">
+            <li><a class="nav-link" href="../../articles/savings/index.html"><span class="nav-icon">⚡</span>節約術</a></li>
+            <li><a class="nav-link" href="../../articles/investment/index.html"><span class="nav-icon">📈</span>資産形成</a></li>
+            <li><a class="nav-link" href="../../articles/poikatsu/index.html"><span class="nav-icon">🪙</span>ポイ活</a></li>
+            <li><a class="nav-link" href="../../articles/efficiency/index.html"><span class="nav-icon">🚀</span>効率化</a></li>
+            <li><a class="nav-link" href="../../articles/goods/index.html"><span class="nav-icon">🛍️</span>グッズ</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="nav-divider"></div>
+      <ul class="nav-list">
+        <li><a class="nav-link" href="../../privacy-policy.html"><span class="nav-icon">📜</span>プライバシーポリシー</a></li>
+      </ul>
+    </aside>
+
+    <div class="main-content">
+      <div class="content-inner">
+
+        <div class="breadcrumb"><a href="../../index.html">ホーム</a> / <a href="../index.html">使い方マニュアル</a> / 予算管理</div>
+
+        <header class="page-header">
+          <span class="eyebrow">MANUAL / BUDGET</span>
+          <h1>🎯 予算管理</h1>
+          <p>カテゴリごとに月の予算を決めておくと、レポートで使いすぎがひと目で分かり、使いすぎそうなときは通知でお知らせします。</p>
+        </header>
+
+        <nav class="manual-toc">
+          <div class="manual-toc-title">このページの内容</div>
+          <ul>
+            <li><a href="#set">予算を設定する</a></li>
+            <li><a href="#history">予算の履歴を確認・編集する</a></li>
+            <li><a href="#alert">予算アラート</a></li>
+          </ul>
+        </nav>
+
+        <section class="manual-section" id="set">
+          <h2>予算を設定する</h2>
+
+<ol class="steps">
+  <li><kbd>⚙️ 設定</kbd> →「予算管理」を開きます。画面上部で当月の予算合計と設定済みカテゴリ数を確認できます。</li>
+  <li>複数カテゴリなら <kbd>まとめて予算を設定</kbd>（設定済みの場合は「予算をまとめて更新」）、
+      1件だけなら右上の <kbd>＋</kbd> をタップします。</li>
+  <li>カテゴリ・金額・適用開始月を選んで <kbd>保存</kbd> します。</li>
+  <li>設定した予算は、レポートの月次詳細で「使った額/予算」のバーとして表示されます。
+      予算を超えると赤色になります。</li>
+</ol>
+<div class="callout tip">予算は「適用開始月」から先の月にずっと適用されます。
+金額を変えたいときは、新しい開始月で追加すれば履歴として管理されます。</div>
+        </section>
+        <section class="manual-section" id="history">
+          <h2>予算の履歴を確認・編集する</h2>
+
+<p>「予算の履歴」のカテゴリ行をタップすると、そのカテゴリの<strong>過去〜未来の全履歴</strong>が
+適用開始月の新しい順で表示されます。</p>
+<ul class="checklist">
+  <li><span class="check-icon">✓</span><div>当月に適用されている行には<strong>「現在適用中」</strong>バッジが付きます。</div></li>
+  <li><span class="check-icon">✓</span><div>行をタップすると編集シートが開きます。</div></li>
+  <li><span class="check-icon">✓</span><div>行を左にスワイプすると削除できます。</div></li>
+</ul>
+        </section>
+        <section class="manual-section" id="alert">
+          <h2>予算アラート</h2>
+
+<p><kbd>⚙️ 設定</kbd> →「通知」の<strong>「予算アラートの通知」</strong>をONにしておくと、
+<strong>予算の8割を超えたカテゴリがあったとき、その瞬間にプッシュ通知</strong>でお知らせします。</p>
+<div class="callout note">同じ月・同じカテゴリのアラートは1回だけ届きます。
+通知が多いと感じる場合は、「予算アラートの通知」をOFFにすると停止できます。</div>
+<div class="callout note">予算超過・残額少なめのお知らせは支出一覧の画面上には表示されず、
+プッシュ通知とお知らせ一覧（ホームのベルアイコン）でのみお届けします。</div>
+        </section>
+
+        <!-- Google AdSense 自動広告表示エリア（余白確保用プレースホルダー） -->
+        <div class="ad-placeholder">
+          <span class="ad-label">AD</span>
+          <p>この付近に Google AdSense 自動広告が表示される予定です。</p>
+        </div>
+
+        <nav class="page-nav">
+          <a class="page-nav-item prev" href="../fixed-cost/index.html"><span>← 前のページ</span><strong>🔁 固定費と登録提案</strong></a>
+          <a class="page-nav-item next" href="../category/index.html"><span>次のページ →</span><strong>🗂️ カテゴリと自動分類</strong></a>
+        </nav>
+
+
+        <footer class="site-footer">© 2026 MyKakeibo 開発者</footer>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../script.js"></script>
+</body>
+</html>
